@@ -161,11 +161,12 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
 
             if (isSitting)
             {
-                m_CombinedTransform.position *= 0.5f;
+                m_HeadTransform.position *= 0.5f; //제대로 작동이 안되면 m_CombinedTransform일 수도 있음. 내일 테스트 후 변경
                 return base.ComputeDesiredMove(input) * 0.5f;
             }
             else
             {
+                m_HeadTransform.position *= 2.0f;
                 return base.ComputeDesiredMove(input);
             }
         }
