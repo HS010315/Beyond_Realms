@@ -1,5 +1,8 @@
 using Unity.XR.CoreUtils;
 using UnityEngine.Assertions;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.InputSystem;
+
 
 namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
 {
@@ -66,6 +69,10 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
         Pose m_LeftMovementPose = Pose.identity;
         Pose m_RightMovementPose = Pose.identity;
 
+        [SerializeField]
+        [Tooltip("Action for the B button on the right hand controller.")]
+        InputActionReference m_RightHandBButtonAction;
+
         protected override void Awake()
         {
             base.Awake();
@@ -76,8 +83,19 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
             m_CombinedTransform.localRotation = Quaternion.identity;
 
             forwardSource = m_CombinedTransform;
+
+            if (m_RightHandBButtonAction != null)
+            {
+                m_RightHandBButtonAction.action.Enable();
+                m_RightHandBButtonAction.action.started += OnRightHandBButtonPressed;
+            }
         }
 
+        private void OnRightHandBButtonPressed(InputAction.CallbackContext context)
+        {
+
+            isSitting = !isSitting;
+        }
         protected override Vector3 ComputeDesiredMove(Vector2 input)
         {
             if (input == Vector2.zero)
@@ -139,6 +157,7 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
             var combinedPosition = Vector3.Lerp(m_RightMovementPose.position, m_LeftMovementPose.position, leftHandBlend);
             var combinedRotation = Quaternion.Slerp(m_RightMovementPose.rotation, m_LeftMovementPose.rotation, leftHandBlend);
             m_CombinedTransform.SetPositionAndRotation(combinedPosition, combinedRotation);
+
 
             if (isSitting)
             {
