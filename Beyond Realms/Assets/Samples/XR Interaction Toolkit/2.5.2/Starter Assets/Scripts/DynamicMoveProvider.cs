@@ -93,8 +93,8 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
 
         private void OnRightHandBButtonPressed(InputAction.CallbackContext context)
         {
-
             isSitting = !isSitting;
+            Debug.Log("isSitting: " + isSitting); // 토글이 제대로 작동하는지 디버그하기 위해 이 줄을 추가합니다.
         }
         protected override Vector3 ComputeDesiredMove(Vector2 input)
         {
@@ -170,7 +170,7 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
                 return base.ComputeDesiredMove(input);
             }
         }
-
+        
         [SerializeField]
         [Tooltip("Whether the player is currently sitting.")]
         bool m_IsSitting;
