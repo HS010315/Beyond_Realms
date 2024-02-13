@@ -350,7 +350,7 @@ namespace Unity.VRTemplate
             }
 
             if (m_Handle != null)
-                m_Handle.localEulerAngles = new Vector3(0.0f, angle, 0.0f);
+                m_Handle.localEulerAngles = new Vector3(0.0f, 0.0f , angle);
         }
 
         void SetValue(float newValue)
