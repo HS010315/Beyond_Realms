@@ -8,7 +8,7 @@ namespace Unity.VRTemplate
     /// <summary>
     /// An interactable knob that follows the rotation of the interactor
     /// </summary>
-    public class XRKnob : XRBaseInteractable
+    public class XRKnobZ : XRBaseInteractable
     {
         const float k_ModeSwitchDeadZone = 0.1f; // Prevents rapid switching between the different rotation tracking modes
 
@@ -357,7 +357,7 @@ namespace Unity.VRTemplate
             }
 
             if (m_Handle != null)
-                m_Handle.localEulerAngles = new Vector3(0.0f, 0.0f , angle);
+                m_Handle.localEulerAngles = new Vector3(0.0f,0.0f, angle);
         }
 
         void SetValue(float newValue)
