@@ -9326,9 +9326,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1445539785, guid: 749446c68aa3c43419e1fbd9939074ab, type: 3}
+    - target: {fileID: 1445539782, guid: 749446c68aa3c43419e1fbd9939074ab, type: 3}
       propertyPath: m_SelectMode
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1445539782, guid: 749446c68aa3c43419e1fbd9939074ab, type: 3}
+      propertyPath: m_DistanceCalculationMode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 770809072337031488, guid: 749446c68aa3c43419e1fbd9939074ab, type: 3}
       propertyPath: m_Name
