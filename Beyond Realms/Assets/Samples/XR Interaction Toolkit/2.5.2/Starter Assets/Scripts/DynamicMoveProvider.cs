@@ -83,19 +83,8 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
             m_CombinedTransform.localRotation = Quaternion.identity;
 
             forwardSource = m_CombinedTransform;
-
-            if (m_RightHandBButtonAction != null)
-            {
-                m_RightHandBButtonAction.action.Enable();
-                m_RightHandBButtonAction.action.started += OnRightHandBButtonPressed;
-            }
         }
 
-        private void OnRightHandBButtonPressed(InputAction.CallbackContext context)
-        {
-            isSitting = !isSitting;
-            Debug.Log("isSitting: " + isSitting); // 토글이 제대로 작동하는지 디버그하기 위해 이 줄을 추가합니다.
-        }
         protected override Vector3 ComputeDesiredMove(Vector2 input)
         {
             if (input == Vector2.zero)
@@ -159,26 +148,8 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
             m_CombinedTransform.SetPositionAndRotation(combinedPosition, combinedRotation);
 
 
-            if (isSitting)
-            {
-                m_HeadTransform.position *= 0.5f; //제대로 작동이 안되면 m_CombinedTransform일 수도 있음. 내일 테스트 후 변경
-                return base.ComputeDesiredMove(input) * 0.5f;
-            }
-            else
-            {
-                m_HeadTransform.position *= 2.0f;
-                return base.ComputeDesiredMove(input);
-            }
+            return base.ComputeDesiredMove(input);
         }
-        
-        [SerializeField]
-        [Tooltip("Whether the player is currently sitting.")]
-        bool m_IsSitting;
-
-        public bool isSitting
-        {
-            get => m_IsSitting;
-            set => m_IsSitting = value;
-        }
+       
     }
 }

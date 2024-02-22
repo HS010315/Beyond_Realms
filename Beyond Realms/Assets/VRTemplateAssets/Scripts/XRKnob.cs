@@ -201,7 +201,14 @@ namespace Unity.VRTemplate
         void Start()
         {
             SetValue(m_Value);
-            SetKnobRotation(ValueToRotation());
+            if(m_MaxAngle>0)
+            {
+                SetKnobRotation(m_MinAngle);
+            }
+            else
+            {
+                SetKnobRotation(m_MaxAngle);
+            }
         }
 
         protected override void OnEnable()

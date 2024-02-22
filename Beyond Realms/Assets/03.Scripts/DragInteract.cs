@@ -47,7 +47,7 @@ public class DragInteract : XRBaseInteractable
     {
         LocalAxis.Normalize();
 
-        //Length can't be negative, a negative length just mean an inverted axis, so fix that
+        //Length can't be negative, a negative length just means an inverted axis, so fix that
         if (AxisLength < 0)
         {
             LocalAxis *= -1;
@@ -85,7 +85,7 @@ public class DragInteract : XRBaseInteractable
                 Vector3 distance = m_GrabbingInteractor.transform.position - transform.position - m_GrabbedOffset;
                 float projected = Vector3.Dot(distance, WorldAxis);
 
-                //ajust projected to clamp it to steps if there is steps
+                //adjust projected to clamp it to steps if there are steps
                 if (Steps != 0 && !SnapOnlyOnRelease)
                 {
                     int steps = Mathf.RoundToInt(projected / m_StepLength);
@@ -143,7 +143,6 @@ public class DragInteract : XRBaseInteractable
             dist = step * m_StepLength;
 
             transform.position = m_StartPoint + transform.TransformDirection(LocalAxis) * dist;
-
         }
     }
 
