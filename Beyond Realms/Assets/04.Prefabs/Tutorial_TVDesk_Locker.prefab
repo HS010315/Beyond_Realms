@@ -583,7 +583,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 124
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &5159133095219402127
 MonoBehaviour:
@@ -688,7 +688,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   MovingRigidbody: {fileID: 5159133095219402124}
-  LocalAxis: {x: 0, y: 0, z: 0}
+  LocalAxis: {x: 1, y: 0, z: 0}
   AxisLength: 0.3
   Steps: 0
   SnapOnlyOnRelease: 1

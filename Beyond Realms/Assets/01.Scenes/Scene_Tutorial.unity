@@ -7382,6 +7382,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1918369543 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 4369402373585542750, guid: 6b74220e0358f2c45b140007f9a3d503, type: 3}
+  m_PrefabInstance: {fileID: 4369402374804681705}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1928401596
 GameObject:
   m_ObjectHideFlags: 0
@@ -12738,7 +12743,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5159133095219402123, guid: 6b74220e0358f2c45b140007f9a3d503, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.226
+      value: 0.23
       objectReference: {fileID: 0}
     - target: {fileID: 5159133095219402123, guid: 6b74220e0358f2c45b140007f9a3d503, type: 3}
       propertyPath: m_LocalPosition.y
@@ -12775,6 +12780,26 @@ PrefabInstance:
     - target: {fileID: 5159133095219402123, guid: 6b74220e0358f2c45b140007f9a3d503, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5159133095219402127, guid: 6b74220e0358f2c45b140007f9a3d503, type: 3}
+      propertyPath: m_Colliders.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5159133095219402127, guid: 6b74220e0358f2c45b140007f9a3d503, type: 3}
+      propertyPath: m_Colliders.Array.data[0]
+      value: 
+      objectReference: {fileID: 1918369543}
+    - target: {fileID: 5159133095219402127, guid: 6b74220e0358f2c45b140007f9a3d503, type: 3}
+      propertyPath: OnDragDistance.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5159133095219402127, guid: 6b74220e0358f2c45b140007f9a3d503, type: 3}
+      propertyPath: OnDragDistance.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5159133095219402127, guid: 6b74220e0358f2c45b140007f9a3d503, type: 3}
+      propertyPath: OnDragDistance.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6142073322166336400, guid: 6b74220e0358f2c45b140007f9a3d503, type: 3}
       propertyPath: m_Name
