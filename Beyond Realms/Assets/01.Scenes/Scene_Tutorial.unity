@@ -6394,7 +6394,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 33
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1608449612
 GameObject:
@@ -6895,7 +6895,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransitionDuration: 0.125
-  m_InteractableSource: {fileID: 0}
+  m_InteractableSource: {fileID: 4729714903271440434}
   m_IgnoreHoverEvents: 0
   m_IgnoreHoverPriorityEvents: 1
   m_IgnoreFocusEvents: 1
@@ -9629,7 +9629,7 @@ PrefabInstance:
       objectReference: {fileID: -657910305853438534, guid: 5f5d4caab9ecbfa4e904eb11e2a64f7e, type: 3}
     - target: {fileID: 6244641037853366439, guid: 75d9c53e8c0df164789d687967ad6cfc, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6244641037853366439, guid: 75d9c53e8c0df164789d687967ad6cfc, type: 3}
       propertyPath: m_LocalScale.x
@@ -12724,6 +12724,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4604921052138079922, guid: 6b74220e0358f2c45b140007f9a3d503, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5159133095219402122, guid: 6b74220e0358f2c45b140007f9a3d503, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5159133095219402123, guid: 6b74220e0358f2c45b140007f9a3d503, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -12776,6 +12784,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7332201801442407279, guid: 6b74220e0358f2c45b140007f9a3d503, type: 3}
+      propertyPath: m_Renderer
+      value: 
+      objectReference: {fileID: 8879920304365282918}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b74220e0358f2c45b140007f9a3d503, type: 3}
 --- !u!23 &4392558402680097039
@@ -15781,6 +15793,11 @@ MeshRenderer:
 --- !u!4 &8879920304365282914 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5159133095219402123, guid: 6b74220e0358f2c45b140007f9a3d503, type: 3}
+  m_PrefabInstance: {fileID: 4369402374804681705}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &8879920304365282918 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3131449777142775336, guid: 6b74220e0358f2c45b140007f9a3d503, type: 3}
   m_PrefabInstance: {fileID: 4369402374804681705}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &8938581049715346855
