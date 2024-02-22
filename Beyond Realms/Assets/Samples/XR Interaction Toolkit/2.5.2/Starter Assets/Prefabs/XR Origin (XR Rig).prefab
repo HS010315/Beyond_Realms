@@ -772,6 +772,7 @@ MonoBehaviour:
   m_RightControllerTransform: {fileID: 1670256625}
   m_LeftHandMovementDirection: 0
   m_RightHandMovementDirection: 0
+  m_RightHandBButtonAction: {fileID: 0}
 --- !u!1 &210070321626390654
 GameObject:
   m_ObjectHideFlags: 0

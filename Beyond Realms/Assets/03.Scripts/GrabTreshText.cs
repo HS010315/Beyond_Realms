@@ -8,6 +8,7 @@ public class GrabTreshText : MonoBehaviour
     public XRGrabInteractable[] grabInteractables;
     public GameObject uiPanelObject;
     public Text uiText;
+    public float fadeDuration = 0.5f; // 페이드 인/아웃 지속 시간
 
     private CanvasGroup canvasGroup;
 
@@ -38,8 +39,7 @@ public class GrabTreshText : MonoBehaviour
     {
         if (canvasGroup != null)
         {
-            uiPanelObject.SetActive(true);
-            canvasGroup.alpha = 1f;
+            StartCoroutine(FadeCanvasGroup(canvasGroup, canvasGroup.alpha, 1f, fadeDuration));
 
             if (uiText != null)
             {
@@ -52,21 +52,29 @@ public class GrabTreshText : MonoBehaviour
     {
         if (canvasGroup != null)
         {
-            canvasGroup.alpha = 0f;
-
-            StartCoroutine(DisablePanelAndTextAfterDelay(0.3f));
+            StartCoroutine(FadeCanvasGroup(canvasGroup, canvasGroup.alpha, 0f, fadeDuration));
         }
     }
 
-    IEnumerator DisablePanelAndTextAfterDelay(float delay)
+    IEnumerator FadeCanvasGroup(CanvasGroup cg, float startAlpha, float endAlpha, float duration)
     {
-        yield return new WaitForSeconds(delay);
+        float elapsedTime = 0f;
 
-        uiPanelObject.SetActive(false);
-
-        if (uiText != null)
+        while (elapsedTime < duration)
         {
-            uiText.gameObject.SetActive(false);
+            cg.alpha = Mathf.Lerp(startAlpha, endAlpha, elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        cg.alpha = endAlpha;
+
+        if (endAlpha == 0f) // 페이드 아웃 후에는 텍스트를 비활성화합니다.
+        {
+            if (uiText != null)
+            {
+                uiText.gameObject.SetActive(false);
+            }
         }
     }
 }
