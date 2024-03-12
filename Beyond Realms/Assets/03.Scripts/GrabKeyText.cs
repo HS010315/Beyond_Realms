@@ -74,4 +74,13 @@ public class GrabKeyText : MonoBehaviour
             }
         }
     }
+
+    void Update()
+    {
+        if (grabInteractable == null)
+        {
+            uiPanelObject.SetActive(false);
+        }
+
+    }
 }
