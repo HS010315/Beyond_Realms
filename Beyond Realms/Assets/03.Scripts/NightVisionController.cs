@@ -1,9 +1,12 @@
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
-
 public class NightVisionController : MonoBehaviour
 {
-    public KeyCode toggleKey = KeyCode.Q;
+    public Transform headPosition; 
+    public Transform leftHand; 
+    public Transform rightHand; 
+    public float activationDistance = 0.05f; 
+
     public PostProcessVolume postProcessVolume;
     public Color normalColor;
     public Color nightVisionColor = Color.green;
@@ -11,35 +14,30 @@ public class NightVisionController : MonoBehaviour
     private bool nightVisionEnabled = false;
     private ColorGrading colorGrading;
 
-    private GameObject[] nightVisionObjects;
 
     void Start()
     {
         postProcessVolume.profile.TryGetSettings(out colorGrading);
-
-        nightVisionObjects = GameObject.FindGameObjectsWithTag("NightVisionObject");
-
-        UpdateNightVisionEffect();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(toggleKey))
+        if (Vector3.Distance(leftHand.position, rightHand.position) < activationDistance ||
+            Vector3.Distance(rightHand.position, headPosition.position) < activationDistance)
         {
-            nightVisionEnabled = !nightVisionEnabled;
-
-            UpdateNightVisionEffect();
+            ToggleNightVision();
         }
+    }
+
+    void ToggleNightVision()
+    {
+        nightVisionEnabled = !nightVisionEnabled;
+        UpdateNightVisionEffect();
     }
 
     void UpdateNightVisionEffect()
     {
-        foreach (GameObject obj in nightVisionObjects)
-        {
-            obj.SetActive(nightVisionEnabled);
-        }
-
-        if (colorGrading != null)
+        if (colorGrading != null && nightVisionEnabled == true)
         {
             colorGrading.enabled.value = nightVisionEnabled;
             colorGrading.colorFilter.value = nightVisionEnabled ? nightVisionColor : normalColor;
