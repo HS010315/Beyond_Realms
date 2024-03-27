@@ -8974,7 +8974,7 @@ MonoBehaviour:
   leftHand: {fileID: 71921922}
   rightHand: {fileID: 177895647}
   activationDistance: 0.05
-  visionObejct: {fileID: 420000133}
+  visionObject: {fileID: 420000133}
 --- !u!1 &2053702608
 GameObject:
   m_ObjectHideFlags: 0

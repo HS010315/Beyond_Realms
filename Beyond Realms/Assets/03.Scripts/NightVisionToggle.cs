@@ -8,32 +8,48 @@ public class NightVisionToggle : MonoBehaviour
     public Transform leftHand;
     public Transform rightHand;
     public float activationDistance = 0.05f;
-    public GameObject visionObejct;
+    public GameObject visionObject;
     private bool visionActivated = false;
-    // Start is called before the first frame update
+    private float testtime = 0f;
     void Start()
     {
-        visionObejct.SetActive(false);
+        visionObject.SetActive(false);
         visionActivated = false;
-        Debug.Log("Start");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(leftHand.position, rightHand.position) < activationDistance && visionActivated == false ||
-            Vector3.Distance(rightHand.position, headPosition.position) < activationDistance && visionActivated == false)
+        if (Vector3.Distance(leftHand.position, rightHand.position) < activationDistance ||
+            Vector3.Distance(rightHand.position, headPosition.position) < activationDistance )
         {
-            visionObejct.SetActive(true);
-            visionActivated = true;
-            Debug.Log("Yeah body");
+            testtime += Time.deltaTime;
+            if(2 <= testtime && visionActivated == false)
+            {
+                testtime = 0;
+                ActivateVision();
+            }
+            else if(2 <= testtime && visionActivated ==true)
+            {
+                testtime = 0;
+                DeactivateVision();
+            }
         }
-        if (Vector3.Distance(leftHand.position, rightHand.position) < activationDistance && visionActivated == true ||
-            Vector3.Distance(rightHand.position, headPosition.position) < activationDistance && visionActivated == true)
+        else
         {
-            visionObejct.SetActive(false);
-            visionActivated = false;
-            Debug.Log("Light weight baby");
+            testtime = 0;
         }
+    }
+
+    void ActivateVision()
+    {
+        visionObject.SetActive(true);
+        visionActivated = true;
+    }
+
+    void DeactivateVision()
+    {
+        visionObject.SetActive(false);
+        visionActivated = false;
     }
 }
