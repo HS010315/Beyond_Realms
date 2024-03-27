@@ -24,12 +24,12 @@ public class NightVisionToggle : MonoBehaviour
             Vector3.Distance(rightHand.position, headPosition.position) < activationDistance )
         {
             testtime += Time.deltaTime;
-            if(2 <= testtime && visionActivated == false)
+            if(3 <= testtime && visionActivated == false)
             {
                 testtime = 0;
                 ActivateVision();
             }
-            else if(2 <= testtime && visionActivated ==true)
+            else if(3 <= testtime && visionActivated ==true)
             {
                 testtime = 0;
                 DeactivateVision();
