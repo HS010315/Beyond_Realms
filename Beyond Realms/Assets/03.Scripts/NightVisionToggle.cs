@@ -26,13 +26,13 @@ public class NightVisionToggle : MonoBehaviour
             testtime += Time.deltaTime;
             if(3 <= testtime && visionActivated == false)
             {
-                testtime = 0;
                 ActivateVision();
+                testtime = 0;
             }
             else if(3 <= testtime && visionActivated ==true)
             {
-                testtime = 0;
                 DeactivateVision();
+                testtime = 0;
             }
         }
         else
