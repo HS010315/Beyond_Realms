@@ -7,6 +7,8 @@ TagManager:
   - Anchor
   - Key
   - KeyHole
+  - Hand
+  - Button
   layers:
   - Default
   - TransparentFX

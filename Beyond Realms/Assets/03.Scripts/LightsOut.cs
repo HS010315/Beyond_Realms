@@ -2,24 +2,33 @@ using UnityEngine;
 
 public class LightsOut : MonoBehaviour
 {
-    public BoxCollider pushObject;
-    public GameObject[] button;
-    public SphereCollider sphereCollider; // 컨트롤러 콜라이더
+    public GameObject[] buttons;
     public Material[] materials;
-    private int currentMaterialIndex = 0;
+    private int[] buttonMaterialIndices; // 각 버튼에 대한 현재 재질 인덱스를 저장하는 배열
+
+    private void Start()
+    {
+        buttonMaterialIndices = new int[buttons.Length];
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("ㅎㅇ");
-        if (collision.collider == pushObject || collision.collider == sphereCollider)
+        if (collision.collider.CompareTag("Hand") || collision.collider.CompareTag("Button"))
         {
-            foreach (GameObject btn in button)
+            // 각 버튼에 대해 처리합니다.
+            for (int i = 0; i < buttons.Length; i++)
             {
-                Renderer renderer = btn.GetComponent<Renderer>();
+                GameObject button = buttons[i];
+                Renderer renderer = button.GetComponent<Renderer>();
+
                 if (renderer != null && materials.Length > 0)
                 {
-                    currentMaterialIndex = (currentMaterialIndex + 1) % materials.Length;
+                    // 현재 버튼의 재질 인덱스를 가져옵니다.
+                    int currentMaterialIndex = buttonMaterialIndices[i];
+
+                    // 현재 재질 인덱스를 사용하여 재질을 적용하고 다음 인덱스로 업데이트합니다.
                     renderer.material = materials[currentMaterialIndex];
+                    buttonMaterialIndices[i] = (currentMaterialIndex + 1) % materials.Length;
                 }
             }
         }
