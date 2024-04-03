@@ -4,9 +4,9 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class BookInteractor : XRGrabInteractable
 {
     public bool HitCollider = false;
-    protected override void OnSelectEntering(XRBaseInteractor interactor)
+    protected override void OnSelectEntered(XRBaseInteractor interactor)
     {
-        base.OnSelectEntering(interactor);
+        base.OnSelectEntered(interactor);
         if (HitCollider == true)
         {
             base.Drop();
