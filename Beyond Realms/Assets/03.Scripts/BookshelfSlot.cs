@@ -12,8 +12,10 @@ public class BookshelfSlot : MonoBehaviour
             bookInteractor.HitCollider = true;
             bookInteractor.transform.SetParent(transform);
             bookInteractor.transform.localPosition = Vector3.zero;
+            bookInteractor.transform.rotation = Quaternion.identity;
             puzzleSolved();
             bookInteractor.DropBook();
+            Debug.Log("Ãæµ¹");
         }
     }
 

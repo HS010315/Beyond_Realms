@@ -16,7 +16,6 @@ public class BookInteractor : XRGrabInteractable
     protected override void OnSelectExited(XRBaseInteractor interactor)
     {
         base.OnSelectExited(interactor);
-
     }
 
     public void DropBook()
