@@ -6,10 +6,10 @@ public class ShootLaser : MonoBehaviour
 {
     public Material material;
     public GameObject[] cover;
+    public GameObject[] nextLaserPuzzle;
     public float targetLocalYPosition = 0.135f;
     public GameObject Die;
 
-    private Vector3 currentVelocity;
     Laser laser;
     private void Start()
     {
@@ -26,8 +26,9 @@ public class ShootLaser : MonoBehaviour
         if (GameObject.Find("Laser") != null && laser.PuzzleSolved == true)
         {
             Destroy(obj, 1f);
-            Destroy(Die, 5f);
+            Die.SetActive(false);
             Invoke("MoveObjectsOnYAxis", 1.0f);
+            Invoke("NextLaserPuzzle", 2.0f);
         }
     }
 
@@ -49,6 +50,14 @@ public class ShootLaser : MonoBehaviour
                 // 새로운 로컬 위치를 설정
                 objTransform.localPosition = currentLocalPosition;
             }
+        }
+    }
+
+    void NextLaserPuzzle()
+    {
+        foreach (GameObject obj in nextLaserPuzzle)
+        {
+            obj.SetActive(true);
         }
     }
 }

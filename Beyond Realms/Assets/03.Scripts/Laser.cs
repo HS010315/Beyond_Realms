@@ -81,10 +81,14 @@ public class Laser
             laserBeams.Add(hitInfo.point);
             UpdateLaser();
         }
-        if(hitInfo.collider.gameObject.tag == "EndPoint" && laserBeams.Count > 10) //수정필요
+        if(hitInfo.collider.gameObject.tag == "EndPoint" && laserBeams.Count > 6) //수정필요
         {
             Debug.Log("Success");
             PuzzleSolved = true;
         }
+        /*if(hitInfo.collider.gameObject.tag == "LaserPuzzle")
+        {
+            Debug.Log("oh");
+        }*/
     }
 }
