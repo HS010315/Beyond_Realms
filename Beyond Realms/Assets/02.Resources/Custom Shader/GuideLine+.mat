@@ -11,6 +11,7 @@ Material:
   m_Shader: {fileID: -6465566751694194690, guid: 75a75dd91119ff9429ffbd3febfa8380, type: 3}
   m_ValidKeywords:
   - _ALPHATEST_ON
+  - _RECEIVE_SHADOWS_OFF
   - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -21,6 +22,7 @@ Material:
     RenderType: Transparent
   disabledShaderPasses:
   - DepthOnly
+  - SHADOWCASTER
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -93,7 +95,7 @@ Material:
     - _AlphaClip: 1
     - _Blend: 0
     - _BumpScale: 1
-    - _CastShadows: 1
+    - _CastShadows: 0
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _Cull: 0
@@ -110,7 +112,7 @@ Material:
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _ReceiveShadows: 1
+    - _ReceiveShadows: 0
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -118,7 +120,7 @@ Material:
     - _SrcBlend: 5
     - _Surface: 1
     - _TransparentValue: 1
-    - _Transperant_Distance: 8.97
+    - _Transperant_Distance: 0
     - _Value: 1
     - _WorkflowMode: 1
     - _ZTest: 4
