@@ -23,9 +23,9 @@ public class ShootLaser : MonoBehaviour
             Destroy(obj);
             laser = new Laser(gameObject.transform.position, gameObject.transform.forward, material);
         }
-        if (GameObject.Find("Laser") != null && laser.PuzzleSolved == true)
+        else if (GameObject.Find("Laser") != null && laser.PuzzleSolved == true)
         {
-            Destroy(obj, 1f);
+            Destroy(obj,1f);
             Die.SetActive(false);
             Invoke("MoveObjectsOnYAxis", 1.0f);
             Invoke("NextLaserPuzzle", 2.0f);
