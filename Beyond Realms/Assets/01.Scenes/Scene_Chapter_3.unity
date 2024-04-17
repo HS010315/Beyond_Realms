@@ -1266,6 +1266,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 99543608565303475, guid: 00d30eed9b145304cba39ca656b7d52f, type: 3}
+      propertyPath: m_LeftHandTurnAction.m_UseReference
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 99543608565303475, guid: 00d30eed9b145304cba39ca656b7d52f, type: 3}
+      propertyPath: m_RightHandTurnAction.m_UseReference
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 840752726124350945, guid: 00d30eed9b145304cba39ca656b7d52f, type: 3}
       propertyPath: m_TagString
       value: Hand
@@ -1522,6 +1530,10 @@ PrefabInstance:
       propertyPath: m_BackGroundColor.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2694461404837471947, guid: 00d30eed9b145304cba39ca656b7d52f, type: 3}
+      propertyPath: m_UseWorldSpace
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3153532864480659865, guid: 00d30eed9b145304cba39ca656b7d52f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.18
@@ -1588,6 +1600,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051287503209662205, guid: 00d30eed9b145304cba39ca656b7d52f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8287854204789478562, guid: 00d30eed9b145304cba39ca656b7d52f, type: 3}
+      propertyPath: m_LeftHandSnapTurnAction.m_UseReference
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8287854204789478562, guid: 00d30eed9b145304cba39ca656b7d52f, type: 3}
+      propertyPath: m_RightHandSnapTurnAction.m_UseReference
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8757099345406737428, guid: 00d30eed9b145304cba39ca656b7d52f, type: 3}

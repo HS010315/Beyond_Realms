@@ -26,6 +26,7 @@ public class Laser
         this.laser.material = material;
         this.laser.startColor = Color.red;
         this.laser.endColor = Color.red;
+        this.laser.useWorldSpace = false;
 
         CastRay(pos, dir, laser);
     }
