@@ -9,6 +9,8 @@ TagManager:
   - KeyHole
   - Hand
   - Button
+  - Mirror
+  - EndPoint
   layers:
   - Default
   - TransparentFX
