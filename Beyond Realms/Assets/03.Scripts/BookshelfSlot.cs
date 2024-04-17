@@ -10,9 +10,9 @@ public class BookshelfSlot : MonoBehaviour
         if (bookInteractor != null)
         {
             bookInteractor.HitCollider = true;
-            bookInteractor.transform.SetParent(transform);
+            bookInteractor.transform.parent = transform;
             bookInteractor.transform.localPosition = Vector3.zero;
-            bookInteractor.transform.rotation = Quaternion.identity;
+            bookInteractor.transform.localRotation = Quaternion.identity; 
             puzzleSolved();
             bookInteractor.DropBook();
             Debug.Log("Ãæµ¹");
@@ -24,7 +24,7 @@ public class BookshelfSlot : MonoBehaviour
         BookInteractor bookInteractor = other.GetComponent<BookInteractor>();
         if (bookInteractor != null)
         {
-            bookInteractor.transform.SetParent(null);
+            bookInteractor.transform.parent = null;
             puzzleFailed();
         }
     }
