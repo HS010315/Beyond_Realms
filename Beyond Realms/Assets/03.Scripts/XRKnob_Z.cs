@@ -8,7 +8,7 @@ namespace Unity.VRTemplate
     /// <summary>
     /// An interactable knob that follows the rotation of the interactor
     /// </summary>
-    public class XRKnobZ : XRBaseInteractable
+    public class XRKnob_Z : XRBaseInteractable
     {
         const float k_ModeSwitchDeadZone = 0.1f; // Prevents rapid switching between the different rotation tracking modes
 
@@ -201,7 +201,7 @@ namespace Unity.VRTemplate
         void Start()
         {
             SetValue(m_Value);
-            if (m_MaxAngle > 0)
+            if(m_MaxAngle>0)
             {
                 SetKnobRotation(m_MinAngle);
             }
@@ -264,9 +264,22 @@ namespace Unity.VRTemplate
 
         void UpdateRotation(bool freshCheck = false)
         {
+            if (!isSelected || m_Interactor == null)
+                return;
+
             // Are we in position offset or direction rotation mode?
             var interactorTransform = m_Interactor.GetAttachTransform(this);
 
+            // Calculate controller's local direction in knob's coordinate system
+            var localDirection = transform.InverseTransformDirection(interactorTransform.forward);
+
+            // Determine the rotation direction based on local direction
+            float knobRotationDirection = Mathf.Sign(localDirection.z); // 1: right, -1: left
+
+            // Set the desired rotation direction based on knobRotationDirection
+            float rotationDirection = 1.0f; // Default to clockwise rotation
+            if (knobRotationDirection < 0) // If localDirection.z is negative (controller pointing left)
+                rotationDirection = -1.0f; // Counter-clockwise rotation
             // We cache the three potential sources of rotation - the position offset, the forward vector of the controller, and up vector of the controller
             // We store any data used for determining which rotation to use, then flatten the vectors to the local xz plane
             var localOffset = transform.InverseTransformVector(interactorTransform.position - m_Handle.position);
@@ -335,7 +348,7 @@ namespace Unity.VRTemplate
                 m_ForwardVectorAngles.SetTargetFromVector(localForward);
 
             // Apply offset to base knob rotation to get new knob rotation
-            var knobRotation = m_BaseKnobRotation - ((m_UpVectorAngles.totalOffset + m_ForwardVectorAngles.totalOffset) * m_TwistSensitivity) - m_PositionAngles.totalOffset;
+            var knobRotation = m_BaseKnobRotation + (rotationDirection * (m_UpVectorAngles.totalOffset + m_ForwardVectorAngles.totalOffset) * m_TwistSensitivity) + m_PositionAngles.totalOffset;
 
             // Clamp to range
             if (m_ClampedMotion)
@@ -357,7 +370,7 @@ namespace Unity.VRTemplate
             }
 
             if (m_Handle != null)
-                m_Handle.localEulerAngles = new Vector3(0.0f, 0.0f, angle);
+                m_Handle.localEulerAngles = new Vector3(0.0f,0.0f, angle);
         }
 
         void SetValue(float newValue)
