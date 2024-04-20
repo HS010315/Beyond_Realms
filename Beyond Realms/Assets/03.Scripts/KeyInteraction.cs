@@ -32,8 +32,6 @@ public class KeyInteraction : MonoBehaviour
             // 목표 회전 각도 설정
             Vector3 targetRotation = new Vector3(currentRotation.x, targetAngleY, currentRotation.z);
 
-            Debug.Log("현재 각도 : " + currentAngleY);
-
             //// 회전을 적용
             //rotateKey.transform.eulerAngles = targetRotation;
             if (Mathf.Approximately(currentAngleY, targetAngleY))
