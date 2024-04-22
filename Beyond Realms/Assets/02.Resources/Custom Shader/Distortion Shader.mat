@@ -36,15 +36,15 @@ Material:
     m_Floats:
     - _Emissive_Edge: 0.52
     - _Noise_Scale: 50
-    - _Noise_Value: 0.42
+    - _Noise_Value: 0.48
     - _Noise__Range: -1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Time_Cycle_X: 0.1
-    - _Time_Cycle_Y: 0.1
+    - _Time_Cycle_X: 0.05
+    - _Time_Cycle_Y: 0.05
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 0}
-    - _Emissive_Edge_Color: {r: 42.722507, g: 42.722507, b: 42.722507, a: 0}
+    - _Emissive_Edge_Color: {r: 114.07579, g: 45.386387, b: 8.361572, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &1173264256298909985
 MonoBehaviour:
