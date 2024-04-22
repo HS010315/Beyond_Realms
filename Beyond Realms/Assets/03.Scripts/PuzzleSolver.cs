@@ -24,7 +24,7 @@ public class PuzzleSolver : MonoBehaviour
     }
     public void MoveObject()
     {
-        if (Activate > 1)
+        if (Activate > 10)
         {
             objectToMove.position = Vector3.Lerp(objectToMove.position, targetPosition, moveSpeed * Time.deltaTime);
         }
