@@ -1603,12 +1603,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8287854204789478562, guid: 00d30eed9b145304cba39ca656b7d52f, type: 3}
-      propertyPath: m_LeftHandSnapTurnAction.m_UseReference
+      propertyPath: m_EnableTurnAround
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8287854204789478562, guid: 00d30eed9b145304cba39ca656b7d52f, type: 3}
+      propertyPath: m_EnableTurnLeftRight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8287854204789478562, guid: 00d30eed9b145304cba39ca656b7d52f, type: 3}
+      propertyPath: m_LeftHandSnapTurnAction.m_UseReference
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8287854204789478562, guid: 00d30eed9b145304cba39ca656b7d52f, type: 3}
       propertyPath: m_RightHandSnapTurnAction.m_UseReference
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8757099345406737428, guid: 00d30eed9b145304cba39ca656b7d52f, type: 3}
       propertyPath: m_TagString
