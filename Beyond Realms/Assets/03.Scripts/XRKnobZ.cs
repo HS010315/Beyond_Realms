@@ -198,17 +198,14 @@ namespace Unity.VRTemplate
         /// </summary>
         public ValueChangeEvent onValueChange => m_OnValueChange;
 
+        /// <summary>
+        /// Setting Start Angle When Project Started
+        /// </summary>
+        public float StartAngle;
         void Start()
         {
             SetValue(m_Value);
-            if (m_MaxAngle > 0)
-            {
-                SetKnobRotation(m_MinAngle);
-            }
-            else
-            {
-                SetKnobRotation(m_MaxAngle);
-            }
+            SetKnobRotation(StartAngle);
         }
 
         protected override void OnEnable()

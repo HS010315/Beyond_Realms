@@ -2,115 +2,168 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
 
-/// <summary>
-/// An interactable lever that snaps into an on or off position by a direct interactor
-/// </summary>
-public class XRLever : XRBaseInteractable
+namespace Unity.VRTemplate
 {
-    [Tooltip("The object that's grabbed and manipulated")]
-    public Transform handle = null;
-
-    [Tooltip("The initial value of the lever")]
-    public bool defaultValue = false;
-
-    // 레버 작동 중
-    public UnityEvent OnLeverActivate = new UnityEvent();
-
-    // 레버 작동 끝
-    public UnityEvent OnLeverDeactivate = new UnityEvent();
-
-    public bool Value { get; private set; } = false;
-
-    private IXRSelectInteractor selectInteractor = null;
-
-    private void Start()
+    /// <summary>
+    /// An interactable knob that follows the rotation of the interactor
+    /// </summary>
+    public class XRLever : XRBaseInteractable
     {
-        FindSnapDirection(defaultValue);
-        SetValue(defaultValue);
-    }
+        [SerializeField]
+        [Tooltip("The object that is visually grabbed and manipulated")]
+        Transform m_Handle = null;
 
-    protected override void OnEnable()
-    {
-        base.OnEnable();
-        selectEntered.AddListener(StartGrab);
-        selectExited.AddListener(EndGrab);
-        selectExited.AddListener(ApplyValue);
-    }
+        [SerializeField]
+        [Tooltip("Angle increments to support, if greater than '0'")]
+        float m_AngleIncrement = 0.0f;
 
-    protected override void OnDisable()
-    {
-        base.OnDisable();
-        selectEntered.RemoveListener(StartGrab);
-        selectExited.RemoveListener(EndGrab);
-        selectExited.RemoveListener(ApplyValue);
-    }
+        [SerializeField]
+        [Tooltip("The minimum angle of the lever")]
+        float m_MinAngle = -45.0f;
 
-    private void StartGrab(SelectEnterEventArgs eventArgs)
-    {
-        selectInteractor = eventArgs.interactorObject;
-    }
+        [SerializeField]
+        [Tooltip("The maximum angle of the lever")]
+        float m_MaxAngle = 45.0f;
 
-    private void EndGrab(SelectExitEventArgs eventArgs)
-    {
-        selectInteractor = null;
-    }
+        [System.Serializable]
+        public class ValueChangeEvent : UnityEvent<float, float> { } // ValueChangeEvent 정의
 
-    public override void ProcessInteractable(XRInteractionUpdateOrder.UpdatePhase updatePhase)
-    {
-        base.ProcessInteractable(updatePhase);
 
-        if (updatePhase == XRInteractionUpdateOrder.UpdatePhase.Dynamic)
+        [SerializeField]
+        [Tooltip("Events to trigger when the lever is rotated")]
+        ValueChangeEvent m_OnValueChange = new ValueChangeEvent();
+
+        IXRSelectInteractor m_Interactor;
+
+        float m_BaseLeverRotationX = 0.0f;
+        float m_BaseLeverRotationZ = 0.0f;
+
+        /// <summary>
+        /// The object that is visually grabbed and manipulated
+        /// </summary>
+        public Transform handle
         {
-            if (isSelected)
+            get => m_Handle;
+            set => m_Handle = value;
+        }
+
+        /// <summary>
+        /// The minimum angle of the lever
+        /// </summary>
+        public float minAngle
+        {
+            get => m_MinAngle;
+            set => m_MinAngle = value;
+        }
+
+        /// <summary>
+        /// The maximum angle of the lever
+        /// </summary>
+        public float maxAngle
+        {
+            get => m_MaxAngle;
+            set => m_MaxAngle = value;
+        }
+
+        /// <summary>
+        /// Events to trigger when the lever is rotated
+        /// </summary>
+        public ValueChangeEvent onValueChange => m_OnValueChange;
+
+        void Start()
+        {
+            SetLeverRotation(m_BaseLeverRotationX, m_BaseLeverRotationZ);
+        }
+
+        protected override void OnEnable()
+        {
+            base.OnEnable();
+            selectEntered.AddListener(StartGrab);
+            selectExited.AddListener(EndGrab);
+        }
+
+        protected override void OnDisable()
+        {
+            selectEntered.RemoveListener(StartGrab);
+            selectExited.RemoveListener(EndGrab);
+            base.OnDisable();
+        }
+
+        void StartGrab(SelectEnterEventArgs args)
+        {
+            m_Interactor = args.interactorObject;
+            UpdateBaseLeverRotation();
+            UpdateRotation();
+        }
+
+        void EndGrab(SelectExitEventArgs args)
+        {
+            m_Interactor = null;
+        }
+
+        /// <inheritdoc />
+        public override void ProcessInteractable(XRInteractionUpdateOrder.UpdatePhase updatePhase)
+        {
+            base.ProcessInteractable(updatePhase);
+
+            if (updatePhase == XRInteractionUpdateOrder.UpdatePhase.Dynamic)
             {
-                Vector3 lookDirection = GetLookDirection();
-                handle.forward = transform.TransformDirection(lookDirection);
+                if (isSelected)
+                {
+                    UpdateRotation();
+                }
             }
         }
-    }
 
-    private Vector3 GetLookDirection()
-    {
-        Vector3 direction = selectInteractor.transform.position - handle.position;
-        direction = transform.InverseTransformDirection(direction);
-
-        direction.x = 0;
-        direction.y = Mathf.Clamp(direction.y, 0, 1);
-
-        return direction;
-    }
-
-    private void ApplyValue(SelectExitEventArgs eventArgs)
-    {
-        IXRSelectInteractor interactor = eventArgs.interactorObject;
-        bool isOn = InOnPosition(interactor.transform.position);
-
-        FindSnapDirection(isOn);
-        SetValue(isOn);
-    }
-
-    private bool InOnPosition(Vector3 interactorPosition)
-    {
-        interactorPosition = transform.InverseTransformPoint(interactorPosition);
-        return (interactorPosition.z > 0);
-    }
-
-    private void FindSnapDirection(bool isOn)
-    {
-        handle.forward = isOn ? transform.forward : -transform.forward;
-    }
-
-    private void SetValue(bool isOn)
-    {
-        Value = isOn;
-
-        if (Value)
+        /// <inheritdoc />
+        public override Transform GetAttachTransform(IXRInteractor interactor)
         {
-            OnLeverActivate.Invoke();
+            return m_Handle;
         }
-        else
+
+        void UpdateRotation()
         {
-            OnLeverDeactivate.Invoke();
+            var interactorTransform = m_Interactor.GetAttachTransform(this);
+            var localForward = transform.InverseTransformDirection(interactorTransform.forward);
+            var localUp = transform.InverseTransformDirection(interactorTransform.up);
+
+            var leverRotationX = Mathf.Atan2(localForward.z, localForward.y) * Mathf.Rad2Deg;
+            var leverRotationZ = Mathf.Atan2(localUp.z, localUp.y) * Mathf.Rad2Deg; 
+
+            SetLeverRotation(leverRotationX, leverRotationZ);
+        }
+
+        void SetLeverRotation(float xRotation, float zRotation)
+        {
+            if (m_AngleIncrement > 0)
+            {
+                var normalizeXRotation = xRotation;
+                var normalizeZRotation = zRotation;
+
+                xRotation = (Mathf.Round(normalizeXRotation / m_AngleIncrement) * m_AngleIncrement);
+                zRotation = (Mathf.Round(normalizeZRotation / m_AngleIncrement) * m_AngleIncrement);
+            }
+
+            if (m_Handle != null)
+                m_Handle.localEulerAngles = new Vector3(
+                    Mathf.Clamp(xRotation, m_MinAngle, m_MaxAngle),
+                    0.0f,
+                    Mathf.Clamp(zRotation, m_MinAngle, m_MaxAngle));
+
+            InvokeOnValueChange(xRotation, zRotation);
+        }
+        void UpdateBaseLeverRotation()
+        {
+            var localForward = transform.InverseTransformDirection(m_Interactor.transform.forward);
+            var localRight = transform.InverseTransformDirection(m_Interactor.transform.right);
+
+            m_BaseLeverRotationX = Mathf.Atan2(localForward.z, localForward.y) * Mathf.Rad2Deg;
+            m_BaseLeverRotationZ = Mathf.Atan2(localRight.z, localRight.y) * Mathf.Rad2Deg;
+        }
+
+        void InvokeOnValueChange(float xRotation, float zRotation)
+        {
+            m_OnValueChange.Invoke(xRotation, zRotation);
         }
     }
 }
