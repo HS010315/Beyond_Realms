@@ -62,7 +62,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: Table_Ani
+    m_ConditionEvent: TableAni
     m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -3788244999328066962}
@@ -87,10 +87,10 @@ AnimatorController:
   m_Name: Table
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: Table_Ani
+  - m_Name: TableAni
     m_Type: 3
     m_DefaultFloat: 0
-    m_DefaultInt: 0
+    m_DefaultInt: 1
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
   m_AnimatorLayers:
@@ -170,7 +170,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: Table_Ani
+    m_ConditionEvent: TableAni
     m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4741462354644854773}
