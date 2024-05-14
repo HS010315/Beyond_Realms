@@ -6,11 +6,9 @@ public class JoyStickController : XRBaseInteractable
     public Transform handle; // 조작할 핸들
     public float sensitivity = 1f; // 조작 감도
     public float maxRotationAngleX = 45f; // x 축 최대 회전 각도 (좌우 제한)
-    public float maxRotationAngleZ = 30f; // z 축 최대 회전 각도 (상하 제한)
+    public float maxRotationAngleZ = 45f; // z 축 최대 회전 각도 (상하 제한)
 
     private Quaternion initialRotation; // 초기 회전값
-    private float currentRotationAngleX = 0f; // 현재 x 축 회전 각도
-    private float currentRotationAngleZ = 0f; // 현재 z 축 회전 각도
 
     protected override void Awake()
     {
@@ -25,11 +23,8 @@ public class JoyStickController : XRBaseInteractable
         if (isSelected && selectingInteractor != null)
         {
             Vector2 input = GetControllerInput(selectingInteractor);
-            currentRotationAngleX += input.x * sensitivity;
-            currentRotationAngleX = Mathf.Clamp(currentRotationAngleX, -maxRotationAngleX, maxRotationAngleX);
-
-            currentRotationAngleZ += input.y * sensitivity;
-            currentRotationAngleZ = Mathf.Clamp(currentRotationAngleZ, -maxRotationAngleZ, maxRotationAngleZ);
+            float currentRotationAngleX = Mathf.Clamp(input.x * sensitivity, -maxRotationAngleX, maxRotationAngleX);
+            float currentRotationAngleZ = Mathf.Clamp(input.y * sensitivity, -maxRotationAngleZ, maxRotationAngleZ);
 
             Quaternion newRotation = Quaternion.Euler(currentRotationAngleZ, 0f, currentRotationAngleX);
             handle.rotation = initialRotation * newRotation;
