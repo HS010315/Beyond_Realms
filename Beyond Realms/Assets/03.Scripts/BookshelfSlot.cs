@@ -14,7 +14,6 @@ public class BookshelfSlot : MonoBehaviour
             bookInteractor.transform.localPosition = Vector3.zero;
             bookInteractor.transform.localRotation = Quaternion.identity; 
             puzzleSolved();
-            bookInteractor.DropBook();
             Debug.Log("Ãæµ¹");
         }
     }
