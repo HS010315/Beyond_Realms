@@ -1,25 +1,28 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using System.Collections;
 
 public class BookInteractor : XRGrabInteractable
 {
     public bool HitCollider = false;
-    protected override void OnSelectEntered(XRBaseInteractor interactor)
+
+    private bool CanGrab = true;
+
+    protected override void OnSelectEntering(SelectEnterEventArgs args)
     {
-        base.OnSelectEntered(interactor);
-        if (HitCollider == true)
+        if (HitCollider && CanGrab)
         {
-            base.Drop();
+            Drop();
+            CanGrab = false;
+
+            StartCoroutine(EnableGrabAfterDelay(2f));
         }
     }
 
-    protected override void OnSelectExited(XRBaseInteractor interactor)
+    public IEnumerator EnableGrabAfterDelay(float delay)
     {
-        base.OnSelectExited(interactor);
-    }
+        yield return new WaitForSeconds(delay);
 
-    public void DropBook()
-    {
-        base.Drop();
+        CanGrab = true;
     }
 }
