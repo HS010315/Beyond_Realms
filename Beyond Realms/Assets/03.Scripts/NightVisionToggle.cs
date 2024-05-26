@@ -9,6 +9,7 @@ public class NightVisionToggle : MonoBehaviour
     public Transform rightHand;
     public float activationDistance = 0.05f;
     public GameObject visionObject;
+    public GameObject nonVisionObject;
     private bool visionActivated = false;
     private float testtime = 0f;
     void Start()
@@ -44,12 +45,14 @@ public class NightVisionToggle : MonoBehaviour
     void ActivateVision()
     {
         visionObject.SetActive(true);
+        nonVisionObject.SetActive(false);
         visionActivated = true;
     }
 
     void DeactivateVision()
     {
         visionObject.SetActive(false);
+        nonVisionObject.SetActive(true);
         visionActivated = false;
     }
 }
