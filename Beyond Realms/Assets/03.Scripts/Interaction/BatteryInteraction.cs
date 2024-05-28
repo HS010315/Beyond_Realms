@@ -11,13 +11,14 @@ public class BatteryInteraction : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        GameObject gameObject = collision.gameObject;
-
-        if (gameObject.CompareTag("Battery"))
+        if (collision.gameObject.CompareTag("Battery"))
         {
-            Destroy(gameObject);
-            battery1.SetActive(true);
+            Destroy(collision.gameObject);
 
+            if (battery1 != null)
+            {
+                battery1.SetActive(true);
+            }
         }
     }
     void Update()
