@@ -5,7 +5,9 @@ public class WayPointPuzzle : MonoBehaviour
 {
     public Transform movingObject;
     public GameObject joyStick;
-
+    public List<GameObject> waypoints;
+    public float speed = 1f;
+    
     void Update()
     {
         if(joyStick != null)

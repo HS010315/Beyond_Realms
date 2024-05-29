@@ -15,7 +15,7 @@ public class VRButton : MonoBehaviour
     public Material material;
 
     public Color PrssedColor = Color.green;
-    public Color NormalColor = Color.yellow;
+    public Color NormalColor = Color.white;
     // Start is called before the first frame update
     void Start()
     {

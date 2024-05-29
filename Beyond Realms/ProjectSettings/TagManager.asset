@@ -12,6 +12,7 @@ TagManager:
   - Mirror
   - EndPoint
   - Battery
+  - MainPawn
   layers:
   - Default
   - TransparentFX
