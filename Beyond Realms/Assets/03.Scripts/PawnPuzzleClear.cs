@@ -8,11 +8,13 @@ public class PawnPuzzleClear : MonoBehaviour
     public float coverMoveDistance = 1f;
     public float coverMoveDuration = 2f;
     public float actionDelay = 2f;
+    public GameObject mainPawn;
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.name == "MainPawn")
         {
             StartCoroutine(OpenCover());
+            mainPawn.SetActive(false);
         }
     }
 
