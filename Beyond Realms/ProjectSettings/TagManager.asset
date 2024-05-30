@@ -13,6 +13,11 @@ TagManager:
   - EndPoint
   - Battery
   - MainPawn
+  - Hexagon
+  - Star
+  - Square
+  - Cross
+  - Diamond
   layers:
   - Default
   - TransparentFX
