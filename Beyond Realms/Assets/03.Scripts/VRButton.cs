@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class VRButton : MonoBehaviour
 {
@@ -10,12 +11,26 @@ public class VRButton : MonoBehaviour
     public Transform buttonPressed;
     bool isPressed;
 
-    public GameObject leverCover;
+    public static VRButton instance;
+
+    public int passwordNumber = 1;
+    public UnityEvent ButtonClicekd;
 
     public Material material;
 
-    public Color PrssedColor = Color.green;
+    public Color PrssedColor = Color.blue;
     public Color NormalColor = Color.white;
+    public Color CorrectColor = Color.green;
+    public Color InCorrectColor = Color.red;
+
+    private void Awake()
+    {
+        if(VRButton.instance == null)
+        {
+            VRButton.instance = this;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +50,7 @@ public class VRButton : MonoBehaviour
         {
             button.transform.localPosition = buttonPressed.position;
             presser = other.gameObject;
+            ButtonClicekd.Invoke();
         }
     }
 
@@ -57,23 +73,27 @@ public class VRButton : MonoBehaviour
         if(isPressed != true)
         {
             material.SetColor("_Color", NormalColor);
-            CheckButtonState();
         }
         else
         {
             material.SetColor("_Color", PrssedColor);
-            CheckButtonState();
         }
     }
-    private void CheckButtonState()
+
+    public void CorrectPW()
     {
-        string buttonName = button.name;
-        if (buttonName == "Button1" || buttonName == "Button3")
-        {
-            if (isPressed)
-            {
-                leverCover.SetActive(false);
-            }
-        }
+        material.SetColor("_Color", CorrectColor);
+        Invoke("ResetPW", 0.5f);
+    }
+
+    public void InCorrectPW()
+    {
+        material.SetColor("_Color", InCorrectColor);
+        Invoke("ResetPW", 0.5f);
+    }
+
+    private void ResetPW()
+    {
+        material.SetColor("_Color", NormalColor);
     }
 }
