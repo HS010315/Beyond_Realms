@@ -62,22 +62,22 @@ public class WayPointPuzzle : MonoBehaviour
             if (angleZ > 15 )
             {
                 Debug.Log("аб");
-                GoLeft();
+                Invoke("GoLeft", 0.5f);
             }
             else if (angleZ < -15)
             {
                 Debug.Log("©Л");
-                GoRight();
+                Invoke("GoRight", 0.5f);
             }
             if (angleX > 15)
             {
                 Debug.Log("╬у");
-                GoFront();
+                Invoke("GoFront", 0.5f);
             }
             else if (angleX < -15)
             {
                 Debug.Log("╣з");
-                GoBack();
+                Invoke("GoBack", 0.5f);
             }
         }
         else
@@ -89,171 +89,123 @@ public class WayPointPuzzle : MonoBehaviour
     void GoRight()
     {
         Vector3 wayPointNum = waypoints[nowWayPointsIndex].transform.position;
-        Vector3 newPos = Vector3.MoveTowards(transform.position, wayPointNum, speed * Time.deltaTime);
-        if (nowWayPointsIndex == 1)
+        switch(nowWayPointsIndex)
         {
-            nowWayPointsIndex = 2;
-            transform.position = newPos;
+            case 1:
+                nowWayPointsIndex = 2;
+                break;
+            case 2:
+                nowWayPointsIndex = 3;
+                break;
+            case 4:
+                nowWayPointsIndex = 6;
+                break;
+            case 5:
+                nowWayPointsIndex = 4;
+                break;
+            case 6:
+                nowWayPointsIndex = 7;
+                break;
+            case 8:
+                nowWayPointsIndex = 11;
+                break;
+            case 12:
+                nowWayPointsIndex = 13;
+                break;
+            case 13:
+                nowWayPointsIndex = 15;
+                break;
         }
-        if(nowWayPointsIndex == 2)
-        {
-            nowWayPointsIndex = 3;
-            transform.position = newPos;
-        }
-        if (nowWayPointsIndex == 4)
-        {
-            nowWayPointsIndex = 6;
-            transform.position = newPos;
-        }
-        if (nowWayPointsIndex == 5)
-        {
-            nowWayPointsIndex = 4;
-            transform.position = newPos;
-        }
-        if (nowWayPointsIndex == 6)
-        {
-            nowWayPointsIndex = 7;
-            transform.position = newPos;
-        }
-        if (nowWayPointsIndex == 8)
-        {
-            nowWayPointsIndex = 11;
-            transform.position = newPos;
-        }
-        if (nowWayPointsIndex == 12)
-        {
-            nowWayPointsIndex = 13;
-            transform.position = newPos;
-        }
-        if (nowWayPointsIndex == 13)
-        {
-            nowWayPointsIndex = 15;
-            transform.position = newPos;
-        }
+        Vector3.MoveTowards(movingObject.transform.position, wayPointNum, speed * Time.deltaTime);
     }
     void GoLeft()
     {
         Vector3 wayPointNum = waypoints[nowWayPointsIndex].transform.position;
-        Vector3 newPos = Vector3.MoveTowards(transform.position, wayPointNum, speed * Time.deltaTime);
-        if (nowWayPointsIndex == 2)
+        switch (nowWayPointsIndex)
         {
-            nowWayPointsIndex = 1;
-            transform.position = newPos;
+            case 2:
+                nowWayPointsIndex = 1;
+                break;
+            case 3:
+                nowWayPointsIndex = 2;
+                break;
+            case 4:
+                nowWayPointsIndex = 5;
+                break;
+            case 6:
+                nowWayPointsIndex = 4;
+                break;
+            case 7:
+                nowWayPointsIndex = 6;
+                break;
+            case 11:
+                nowWayPointsIndex = 8;
+                break;
+            case 13:
+                nowWayPointsIndex = 12;
+                break;
+            case 15:
+                nowWayPointsIndex = 13;
+                break;
         }
-        if (nowWayPointsIndex == 3)
-        {
-            nowWayPointsIndex = 2;
-            transform.position = newPos;
-        }
-        if (nowWayPointsIndex == 4)
-        {
-            nowWayPointsIndex = 5;
-            transform.position = newPos;
-        }
-        if (nowWayPointsIndex == 6)
-        {
-            nowWayPointsIndex = 4;
-            transform.position = newPos;
-        }
-        if (nowWayPointsIndex == 7)
-        {
-            nowWayPointsIndex = 6;
-            transform.position = newPos;
-        }
-        if (nowWayPointsIndex == 11)
-        {
-            nowWayPointsIndex = 8;
-            transform.position = newPos;
-        }
-        if (nowWayPointsIndex == 13)
-        {
-            nowWayPointsIndex = 12;
-            transform.position = newPos;
-        }
-        if (nowWayPointsIndex == 15)
-        {
-            nowWayPointsIndex = 13;
-            transform.position = newPos;
-        }
+        Vector3.MoveTowards(movingObject.transform.position, wayPointNum, speed * Time.deltaTime);
     }
     void GoFront()
     {
         Vector3 wayPointNum = waypoints[nowWayPointsIndex].transform.position;
-        Vector3 newPos = Vector3.MoveTowards(transform.position, wayPointNum, speed * Time.deltaTime);
-        if (nowWayPointsIndex == 4)
+        switch(nowWayPointsIndex)
         {
-            nowWayPointsIndex = 2;
-            transform.position = newPos;
+            case 4:
+                nowWayPointsIndex = 2;
+                break;
+            case 9:
+                nowWayPointsIndex = 6;
+                break;
+            case 7:
+                nowWayPointsIndex = 10;
+                break;
+            case 8:
+                nowWayPointsIndex = 4;
+                break;
+            case 12:
+                nowWayPointsIndex = 5;
+                break;
+            case 13:
+                nowWayPointsIndex = 14;
+                break;
+            case 15:
+                nowWayPointsIndex = 16;
+                break;
         }
-        if (nowWayPointsIndex == 9)
-        {
-            nowWayPointsIndex = 6;
-            transform.position = newPos;
-        }
-        if (nowWayPointsIndex == 7)
-        {
-            nowWayPointsIndex = 10;
-            transform.position = newPos;
-        }
-        if (nowWayPointsIndex == 8)
-        {
-            nowWayPointsIndex = 4;
-            transform.position = newPos;
-        }
-        if (nowWayPointsIndex == 12)
-        {
-            nowWayPointsIndex = 5;
-            transform.position = newPos;
-        }
-        if (nowWayPointsIndex == 13)
-        {
-            nowWayPointsIndex = 14;
-            transform.position = newPos;
-        }
-        if (nowWayPointsIndex == 15)
-        {
-            nowWayPointsIndex = 16;
-            transform.position = newPos;
-        }
+        Vector3.MoveTowards(movingObject.transform.position, wayPointNum, speed * Time.deltaTime);
     }
     void GoBack()
     {
         Vector3 wayPointNum = waypoints[nowWayPointsIndex].transform.position;
-        Vector3 newPos = Vector3.MoveTowards(transform.position, wayPointNum, speed * Time.deltaTime);
-        if (nowWayPointsIndex == 2)
+        switch(nowWayPointsIndex)
         {
-            nowWayPointsIndex = 4;
-            transform.position = newPos;
+            case 2:
+                nowWayPointsIndex = 4;
+                break;
+            case 6:
+                nowWayPointsIndex = 9;
+                break;
+            case 10:
+                nowWayPointsIndex = 7;
+                break;
+            case 5:
+                nowWayPointsIndex = 12;
+                break;
+            case 4:
+                nowWayPointsIndex = 8;
+                break;
+            case 14:
+                nowWayPointsIndex = 13;
+                break;
+            case 16:
+                nowWayPointsIndex = 15;
+                break;
         }
-        if (nowWayPointsIndex == 6)
-        {
-            nowWayPointsIndex = 9;
-            transform.position = newPos;
-        }
-        if (nowWayPointsIndex == 10)
-        {
-            nowWayPointsIndex = 7;
-            transform.position = newPos;
-        }
-        if (nowWayPointsIndex == 5)
-        {
-            nowWayPointsIndex = 12;
-            transform.position = newPos;
-        }
-        if (nowWayPointsIndex == 4)
-        {
-            nowWayPointsIndex = 8;
-            transform.position = newPos;
-        }
-        if (nowWayPointsIndex == 14)
-        {
-            nowWayPointsIndex = 13;
-            transform.position = newPos;
-        }
-        if (nowWayPointsIndex == 16)
-        {
-            nowWayPointsIndex = 15;
-            transform.position = newPos;
-        }
-    }
+        Vector3.MoveTowards(movingObject.transform.position, wayPointNum, speed * Time.deltaTime);
+    }  
 }
