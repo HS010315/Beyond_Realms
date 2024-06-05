@@ -3133,7 +3133,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 227418877}
-  - component: {fileID: 227418879}
   - component: {fileID: 227418880}
   m_Layer: 0
   m_Name: JoyStick 1
@@ -3159,39 +3158,6 @@ Transform:
   m_Father: {fileID: 531651652}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &227418879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 227418876}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47327385ba843ae40a02b8306a5a165d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movingObject: {fileID: 0}
-  joyStick: {fileID: 227418876}
-  waypoints:
-  - {fileID: 922350898}
-  - {fileID: 1225857448}
-  - {fileID: 1572873563}
-  - {fileID: 1220677732}
-  - {fileID: 1376100938}
-  - {fileID: 353385145}
-  - {fileID: 1867467532}
-  - {fileID: 321990043}
-  - {fileID: 1943441545}
-  - {fileID: 891941253}
-  - {fileID: 1257692823}
-  - {fileID: 1847706828}
-  - {fileID: 285931111}
-  - {fileID: 1301694170}
-  - {fileID: 563129451}
-  - {fileID: 579852774}
-  speed: 0.1
-  nowWayPointsIndex: 1
 --- !u!114 &227418880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3491,6 +3457,40 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!114 &244705891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244705886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47327385ba843ae40a02b8306a5a165d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movingObject: {fileID: 244705885}
+  joyStickX: {fileID: 227418876}
+  joyStickZ: {fileID: 1669802030}
+  waypoints:
+  - {fileID: 922350898}
+  - {fileID: 1225857448}
+  - {fileID: 1572873563}
+  - {fileID: 1220677732}
+  - {fileID: 1376100938}
+  - {fileID: 353385145}
+  - {fileID: 1867467532}
+  - {fileID: 321990043}
+  - {fileID: 1943441545}
+  - {fileID: 891941253}
+  - {fileID: 1257692823}
+  - {fileID: 1847706828}
+  - {fileID: 285931111}
+  - {fileID: 1301694170}
+  - {fileID: 563129451}
+  - {fileID: 579852774}
+  speed: 0.1
+  nowWayPointsIndex: 1
 --- !u!1 &251738943
 GameObject:
   m_ObjectHideFlags: 0
@@ -18771,7 +18771,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1669802031}
-  - component: {fileID: 1669802033}
   - component: {fileID: 1669802032}
   m_Layer: 0
   m_Name: JoyStick 2
@@ -18912,39 +18911,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   StartAngle: 0
---- !u!114 &1669802033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1669802030}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47327385ba843ae40a02b8306a5a165d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movingObject: {fileID: 0}
-  joyStick: {fileID: 1669802030}
-  waypoints:
-  - {fileID: 922350898}
-  - {fileID: 1225857448}
-  - {fileID: 1572873563}
-  - {fileID: 1220677732}
-  - {fileID: 1376100938}
-  - {fileID: 353385145}
-  - {fileID: 1867467532}
-  - {fileID: 321990043}
-  - {fileID: 1943441545}
-  - {fileID: 891941253}
-  - {fileID: 1257692823}
-  - {fileID: 1847706828}
-  - {fileID: 285931111}
-  - {fileID: 1301694170}
-  - {fileID: 563129451}
-  - {fileID: 579852774}
-  speed: 0.1
-  nowWayPointsIndex: 1
 --- !u!1 &1670390683
 GameObject:
   m_ObjectHideFlags: 0
@@ -20890,7 +20856,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1698855426914839423, guid: 00d30eed9b145304cba39ca656b7d52f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 40
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1698855426914839423, guid: 00d30eed9b145304cba39ca656b7d52f, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -20910,7 +20876,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1698855427003262816, guid: 00d30eed9b145304cba39ca656b7d52f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 40
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1698855427003262816, guid: 00d30eed9b145304cba39ca656b7d52f, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -20966,7 +20932,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1698855427570671361, guid: 00d30eed9b145304cba39ca656b7d52f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 40
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1698855427570671361, guid: 00d30eed9b145304cba39ca656b7d52f, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -20994,7 +20960,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1698855427720938793, guid: 00d30eed9b145304cba39ca656b7d52f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 40
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1698855427720938793, guid: 00d30eed9b145304cba39ca656b7d52f, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -21022,7 +20988,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1698855428041288168, guid: 00d30eed9b145304cba39ca656b7d52f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 40
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1698855428041288168, guid: 00d30eed9b145304cba39ca656b7d52f, type: 3}
       propertyPath: m_AnchoredPosition.y

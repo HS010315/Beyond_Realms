@@ -4,15 +4,15 @@ using System.Collections.Generic;
 public class WayPointPuzzle : MonoBehaviour
 {
     public Transform movingObject;              //실질적으로 움직이는 물체
-    public GameObject joyStick;                 //조작하는 조이스틱
+    public GameObject joyStickX;                //X축 조작하는 조이스틱
+    public GameObject joyStickZ;                //Z축 조작하는 조이스틱
     public List<GameObject> waypoints;
     public float speed = 1f;
     public int nowWayPointsIndex = 1;
     /*public Vector3 joystic_rot_normal; //회전 값을 볼 변수
-    bool moving = false;
+    bool moving = false;   
     List<Vector3> points_pos = new List<Vector3>();
     int count = 0;*/
-    
     void Update()
     {
         /*joystic_rot_normal = transform.rotation.eulerAngles;
@@ -55,10 +55,11 @@ public class WayPointPuzzle : MonoBehaviour
                 
             }
         }*/
-        if (joyStick != null && movingObject != null)
+        Vector3 wayPointNum = waypoints[nowWayPointsIndex].transform.position;
+        if (joyStickZ != null && joyStickX != null && movingObject != null)
         {
-            float angleZ = joyStick.transform.rotation.z * 180f;
-            float angleX = joyStick.transform.rotation.x * 180f;
+            float angleZ = joyStickZ.transform.rotation.z * 180f;
+            float angleX = joyStickX.transform.rotation.x * 180f;
             if (angleZ > 15 )
             {
                 Debug.Log("좌");
@@ -84,11 +85,12 @@ public class WayPointPuzzle : MonoBehaviour
         {
             return;
         }
+        Vector3.MoveTowards(movingObject.transform.position, wayPointNum, speed * Time.deltaTime);
     }
 
     void GoRight()
     {
-        Vector3 wayPointNum = waypoints[nowWayPointsIndex].transform.position;
+        //Vector3 wayPointNum = waypoints[nowWayPointsIndex].transform.position;
         switch(nowWayPointsIndex)
         {
             case 1:
@@ -116,7 +118,7 @@ public class WayPointPuzzle : MonoBehaviour
                 nowWayPointsIndex = 15;
                 break;
         }
-        Vector3.MoveTowards(movingObject.transform.position, wayPointNum, speed * Time.deltaTime);
+        //Vector3.MoveTowards(movingObject.transform.position, wayPointNum, speed * Time.deltaTime);
     }
     void GoLeft()
     {
