@@ -6,9 +6,10 @@ using UnityEngine.Events;
 public class VRButton : MonoBehaviour
 {
     public GameObject button;
-    GameObject presser;
-    public Transform buttonNotPressed;
-    public Transform buttonPressed;
+    [SerializeField] private float threshold = 0.05f;
+    [SerializeField] private float deadZone = 0.005f;
+    private Vector3 startPos;
+    private ConfigurableJoint joint;
     bool isPressed;
 
     public static VRButton instance;
@@ -34,66 +35,68 @@ public class VRButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        startPos = transform.localPosition;
+        joint = GetComponent<ConfigurableJoint>();
         isPressed = false;
         Renderer renderer = button.GetComponent<Renderer>();
         if (renderer != null)
         {
             material = new Material(renderer.material);
             renderer.material = material; // 인스턴스 할당
-            material.SetColor("_Color", NormalColor); // 초기 색상 설정
+            material.SetColor("_BaseColor", NormalColor); // 초기 색상 설정
         }
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if(!isPressed)
-        {
-            button.transform.localPosition = buttonPressed.position;
-            presser = other.gameObject;
-            ButtonClicekd.Invoke();
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject == presser && isPressed !=true)
-        {
-            button.transform.localPosition = buttonNotPressed.position;
-            isPressed = true;
-        }
-        else if(other.gameObject == presser && isPressed == true)
-        {
-            button.transform.localPosition = buttonNotPressed.position;
-            isPressed = false;
-        }
-    }
-
     public void Update()
     {
-        if(isPressed != true)
+        if(!isPressed && GetValue() + threshold >= 1)
         {
-            material.SetColor("_Color", NormalColor);
+            Pressed();
+            material.SetColor("_BaseColor", PrssedColor);
+            Debug.Log("눌림");
         }
-        else
+        if(isPressed && GetValue() - threshold <= 0)
         {
-            material.SetColor("_Color", PrssedColor);
+            Released();
+            material.SetColor("_BaseColor", NormalColor);
+            Debug.Log("뗐음");
         }
+    }
+
+    private float GetValue()
+    {
+        var value = Vector3.Distance(startPos, transform.localPosition) / joint.linearLimit.limit;
+
+        if (Mathf.Abs(value) < deadZone)
+            value = 0;
+
+        return Mathf.Clamp(value, -1f, 1f);
+    }
+
+    private void Pressed()
+    {
+        isPressed = true;
+        ButtonClicekd.Invoke();
+    }
+
+    private void Released()
+    {
+        isPressed = false;
     }
 
     public void CorrectPW()
     {
-        material.SetColor("_Color", CorrectColor);
+        material.SetColor("_BaseColor", CorrectColor);
         Invoke("ResetPW", 0.5f);
     }
 
     public void InCorrectPW()
     {
-        material.SetColor("_Color", InCorrectColor);
+        material.SetColor("_BaseColor", InCorrectColor);
         Invoke("ResetPW", 0.5f);
     }
 
     private void ResetPW()
     {
-        material.SetColor("_Color", NormalColor);
+        material.SetColor("_BaseColor", NormalColor);
     }
 }
