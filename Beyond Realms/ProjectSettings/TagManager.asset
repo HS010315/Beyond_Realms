@@ -18,6 +18,7 @@ TagManager:
   - Square
   - Cross
   - Diamond
+  - Book
   layers:
   - Default
   - TransparentFX
