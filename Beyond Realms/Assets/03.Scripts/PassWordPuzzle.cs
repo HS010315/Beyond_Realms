@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using static UnityEngine.Rendering.DebugUI;
 
 public class PassWordPuzzle : MonoBehaviour
 {
@@ -10,7 +11,9 @@ public class PassWordPuzzle : MonoBehaviour
     public VRButton[] vrButtons;
 
     public GameObject[] pokeColliders;
-    public GameObject leverCover;
+    public GameObject lens;
+    public GameObject panel;
+    public GameObject lastLever;
 
     private void Start()
     {
@@ -28,7 +31,9 @@ public class PassWordPuzzle : MonoBehaviour
                 {
                     button.CorrectPW();
                 }
-                leverCover.SetActive(false);
+                lens.SetActive(false);
+                panel.SetActive(false);
+                lastLever.SetActive(true);
                 pokeColliders[0].SetActive(false);
                 pokeColliders[1].SetActive(false);
             }

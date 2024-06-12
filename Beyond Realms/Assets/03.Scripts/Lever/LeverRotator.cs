@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class LeverRotator : MonoBehaviour
 {
     public GameObject leverObject;
-    public Animator animator;
+    public Animator pawnAnimator;
+    public Animator tableanimator;
+    public Animator tablePawnAnimator;
+    private bool isPawnMoved = false;
 
     // Update is called once per frame
     void Update()
@@ -14,14 +18,24 @@ public class LeverRotator : MonoBehaviour
         float leverRotationX = leverObject.transform.rotation.eulerAngles.x;
 
         // 레버의 x축 각도가 -30도 이하이면 애니메이터 변수를 1로 설정
-        if (leverRotationX <= 330f && leverRotationX >= 330f - 90f) 
+        if (leverRotationX <= 330f && leverRotationX >= 330f - 90f && isPawnMoved) 
         {
-            animator.SetInteger("TableAni", 1);
+            tableanimator.SetInteger("TableAni", 1);
+            Invoke("PawnUp", 1f);
         }
         else
         {
             // -45도가 아니면 애니메이터 변수를 0으로 설정
-            animator.SetInteger("TableAni", 0);
+            tableanimator.SetInteger("TableAni", 0);
         }
+    }
+    public void PawnMove()
+    {
+        isPawnMoved = true;
+        pawnAnimator.SetInteger("PawnAni", 1);
+    }
+    public void PawnUp()
+    {
+        tablePawnAnimator.SetInteger("PawnUpAni", 1);
     }
 }
