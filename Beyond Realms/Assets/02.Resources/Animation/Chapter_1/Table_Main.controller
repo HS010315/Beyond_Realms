@@ -21,7 +21,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 19256cbc332da8a4e95ebf140418fcf3, type: 2}
+  m_Motion: {fileID: 7400000, guid: 691ad4fb2454eef4d95c4e5757d001b0, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -47,7 +47,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 57df43f5b59dad942a7a98f56431a1cb, type: 2}
+  m_Motion: {fileID: 7400000, guid: 9ab0790715d859244acbdb2e7ed44d26, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -84,7 +84,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Table
+  m_Name: Table_Main
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: TableAni
@@ -155,7 +155,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 2d16e7a765639bc478b79d801d68f376, type: 2}
+  m_Motion: {fileID: 7400000, guid: 2de507c8aa906d0408c7b4e171ff219e, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
