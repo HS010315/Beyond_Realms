@@ -6,9 +6,7 @@ using UnityEngine.Events;
 public class LeverRotator : MonoBehaviour
 {
     public GameObject leverObject;
-    public Animator pawnAnimator;
     public Animator tableanimator;
-    public Animator tablePawnAnimator;
     private bool isPawnMoved = false;
 
     // Update is called once per frame
@@ -21,7 +19,6 @@ public class LeverRotator : MonoBehaviour
         if (leverRotationX <= 330f && leverRotationX >= 330f - 90f && isPawnMoved) 
         {
             tableanimator.SetInteger("TableAni", 1);
-            Invoke("PawnUp", 1f);
         }
         else
         {
@@ -32,10 +29,6 @@ public class LeverRotator : MonoBehaviour
     public void PawnMove()
     {
         isPawnMoved = true;
-        pawnAnimator.SetInteger("PawnAni", 1);
     }
-    public void PawnUp()
-    {
-        tablePawnAnimator.SetInteger("PawnUpAni", 1);
-    }
+
 }
