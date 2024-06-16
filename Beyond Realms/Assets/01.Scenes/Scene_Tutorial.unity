@@ -649,6 +649,7 @@ MonoBehaviour:
   m_OnValueChange:
     m_PersistentCalls:
       m_Calls: []
+  StartAngle: 0
 --- !u!1001 &82268192
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1228,6 +1229,7 @@ MonoBehaviour:
   m_OnValueChange:
     m_PersistentCalls:
       m_Calls: []
+  StartAngle: 0
 --- !u!1001 &155188162
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3894,6 +3896,7 @@ MonoBehaviour:
   m_OnValueChange:
     m_PersistentCalls:
       m_Calls: []
+  StartAngle: 0
 --- !u!4 &445310752 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3009259650499955498, guid: a77fc7f3a3d61e44885a1e45c95b26fa, type: 3}
@@ -7273,6 +7276,7 @@ MonoBehaviour:
   m_OnValueChange:
     m_PersistentCalls:
       m_Calls: []
+  StartAngle: 0
 --- !u!1 &1078483230
 GameObject:
   m_ObjectHideFlags: 0
@@ -7731,7 +7735,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -90}
+  m_AnchoredPosition: {x: 0, y: -90.000015}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1204042709
@@ -9604,6 +9608,7 @@ MonoBehaviour:
   m_OnValueChange:
     m_PersistentCalls:
       m_Calls: []
+  StartAngle: 0
 --- !u!1 &1409913777
 GameObject:
   m_ObjectHideFlags: 0
@@ -10361,6 +10366,7 @@ MonoBehaviour:
   m_OnValueChange:
     m_PersistentCalls:
       m_Calls: []
+  StartAngle: 0
 --- !u!1001 &1528295142
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11067,6 +11073,7 @@ MonoBehaviour:
   m_OnValueChange:
     m_PersistentCalls:
       m_Calls: []
+  StartAngle: 0
 --- !u!1 &1651123599
 GameObject:
   m_ObjectHideFlags: 0
@@ -11257,6 +11264,7 @@ MonoBehaviour:
   m_OnValueChange:
     m_PersistentCalls:
       m_Calls: []
+  StartAngle: 0
 --- !u!1001 &1656656397
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12522,6 +12530,7 @@ MonoBehaviour:
   m_OnValueChange:
     m_PersistentCalls:
       m_Calls: []
+  StartAngle: 0
 --- !u!1 &1844304168
 GameObject:
   m_ObjectHideFlags: 0
@@ -21797,6 +21806,10 @@ PrefabInstance:
       propertyPath: m_TwistSensitivity
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 7115395361646421840, guid: f5c3c8564cf1d9f478f99933fb1adb9d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7449760203395756922, guid: f5c3c8564cf1d9f478f99933fb1adb9d, type: 3}
       propertyPath: m_InteractableSource
       value: 
@@ -21857,8 +21870,7 @@ PrefabInstance:
       propertyPath: m_InteractableSource
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7913013297913360430, guid: f5c3c8564cf1d9f478f99933fb1adb9d, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5c3c8564cf1d9f478f99933fb1adb9d, type: 3}
 --- !u!33 &9010712735315064837
 MeshFilter:
