@@ -19,6 +19,8 @@ TagManager:
   - Cross
   - Diamond
   - Book
+  - UpButton
+  - DownButton
   layers:
   - Default
   - TransparentFX
