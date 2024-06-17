@@ -6,7 +6,7 @@ public class LastDialPuzzle : MonoBehaviour
 {
     public Transform rotateDial;
 
-    public float[] targetAngles = { 22.5f, 45f, 67.5f, 90f, 112.5f, 135f, 157.5f, 180f, 202.5f, 225f, 247.5f, 270f, 292.5f, 315f, 337.5f};
+    public float[] targetAngles = { 22.5f, 45f, 67.5f, 90f, 112.5f, 135f, 157.5f, 180f, 202.5f, 225f, 247.5f, 270f, 292.5f, 315f, 337.5f };
 
     [SerializeField] private float threshold = 0.05f;
     [SerializeField] private float deadZone = 0.005f;
@@ -36,19 +36,19 @@ public class LastDialPuzzle : MonoBehaviour
         if (!isPressed && GetValue() + threshold >= 1 && this.gameObject.CompareTag("UpButton"))
         {
             isPressed = true;
-            StartCoroutine(UpPressed(22.5f));
+            StartCoroutine(RotateDial(22.5f));
         }
         if (!isPressed && GetValue() + threshold >= 1 && this.gameObject.CompareTag("DownButton"))
         {
             isPressed = true;
-            StartCoroutine(DownPressed(22.5f));
+            StartCoroutine(RotateDial(-22.5f));
         }
-        if (isPressed && GetValue() - threshold <= 0 && this.gameObject.CompareTag("DownButton") ||
-            isPressed && GetValue() - threshold <= 0 && this.gameObject.CompareTag("UpButton"))
+        if (isPressed && GetValue() - threshold <= 0 && (this.gameObject.CompareTag("DownButton") || this.gameObject.CompareTag("UpButton")))
         {
             Released();
         }
     }
+
     private float GetValue()
     {
         var value = Vector3.Distance(startPos, transform.localPosition) / joint.linearLimit.limit;
@@ -63,14 +63,29 @@ public class LastDialPuzzle : MonoBehaviour
     {
         isPressed = false;
     }
-    IEnumerator UpPressed(float targetAngle)
+
+    private float NormalizeAngle(float angle)
     {
+        angle = angle % 360f;
+        if (angle < 0)
+        {
+            angle += 360f;
+        }
+        return angle;
+    }
+    IEnumerator RotateDial(float angle)
+    {
+        if (isRotating)
+            yield break;
+
         isRotating = true;
 
         Vector3 currentRotation = rotateDial.localEulerAngles;
         float startAngle = currentRotation.z;
-        float endAngle = startAngle + targetAngle;
-        endAngle %= 360f;
+        float endAngle = NormalizeAngle(startAngle + angle);
+
+        Quaternion startRotation = Quaternion.Euler(currentRotation.x, currentRotation.y, startAngle);
+        Quaternion endRotation = Quaternion.Euler(currentRotation.x, currentRotation.y, endAngle);
 
         float startTime = Time.time;
         float elapsedTime = 0f;
@@ -80,47 +95,12 @@ public class LastDialPuzzle : MonoBehaviour
             elapsedTime = Time.time - startTime;
             float t = Mathf.Clamp01(elapsedTime / rotationTime);
 
-            float newAngle = Mathf.Lerp(startAngle, endAngle, t);
-            rotateDial.localEulerAngles = new Vector3(currentRotation.x, currentRotation.y, newAngle);
+            rotateDial.localRotation = Quaternion.Lerp(startRotation, endRotation, t);
 
             yield return null;
         }
 
-        rotateDial.localEulerAngles = new Vector3(currentRotation.x, currentRotation.y, endAngle);
-
+        rotateDial.localRotation = endRotation;
         isRotating = false;
     }
-    IEnumerator DownPressed(float targetAngle)
-    {
-        isRotating = true;
-
-        Vector3 currentRotation = rotateDial.localEulerAngles;
-        float startAngle = currentRotation.z;
-        float endAngle = startAngle - targetAngle;
-        if (endAngle < 0)
-        {
-            endAngle += 360f;
-        }
-        else if (endAngle >= 360f)
-        {
-            endAngle %= 360f;
-        }
-        float startTime = Time.time;
-        float elapsedTime = 0f;
-
-        while (elapsedTime < rotationTime)
-        {
-            elapsedTime = Time.time - startTime;
-            float t = Mathf.Clamp01(elapsedTime / rotationTime);
-
-            float newAngle = Mathf.Lerp(startAngle, endAngle, t);
-            rotateDial.localEulerAngles = new Vector3(currentRotation.x, currentRotation.y, newAngle);
-
-            yield return null;
-        }
-
-        rotateDial.localEulerAngles = new Vector3(currentRotation.x, currentRotation.y, endAngle);
-
-        isRotating = false;
-    }
-}
+}   
