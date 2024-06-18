@@ -44,7 +44,6 @@ namespace UnityEngine.XR.Interaction.Toolkit
     [HelpURL(XRHelpURLConstants.k_XRSocketInteractor)]
     public partial class XRSocketInteractor : XRBaseInteractor
     {
-        public XRKnobX m_XRKnobX;
 
         [SerializeField]
         bool m_ShowInteractableHoverMeshes = true;
@@ -815,23 +814,8 @@ namespace UnityEngine.XR.Interaction.Toolkit
         /// <seealso cref="StartSocketSnapping"/>
         protected virtual bool EndSocketSnapping(XRGrabInteractable grabInteractable)
         {
-            XRKnobX knobScript = m_XRKnobX; // XRKnobX 인스턴스 가져오기
-            DisableGrabAndActivateKnob(grabInteractable, knobScript); // 소켓을 받는 오브젝트의 XRGrabInteractable를 비활성화하고 XRKnobX를 활성화
             grabInteractable.RemoveSingleGrabTransformer(m_SocketGrabTransformer);
             return m_InteractablesWithSocketTransformer.Remove(grabInteractable);
-        }
-
-        private void DisableGrabAndActivateKnob(XRGrabInteractable grabInteractable, XRKnobX knobScript)
-        {
-            if (grabInteractable != null)
-            {
-                grabInteractable.enabled = false; // XRGrabInteractable 비활성화
-            }
-
-            if (knobScript != null)
-            {
-                knobScript.enabled = true; // XRKnobX 스크립트 활성화
-            }
         }
 
         void SyncTransformerParams()
