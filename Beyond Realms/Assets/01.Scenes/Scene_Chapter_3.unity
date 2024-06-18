@@ -384,7 +384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransitionDuration: 0.125
-  m_InteractableSource: {fileID: 7921864249201625164}
+  m_InteractableSource: {fileID: 0}
   m_IgnoreHoverEvents: 0
   m_IgnoreHoverPriorityEvents: 1
   m_IgnoreFocusEvents: 1
@@ -968,6 +968,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 153691740}
+  - component: {fileID: 153691741}
   m_Layer: 0
   m_Name: RightSquarePuzzle
   m_TagString: Untagged
@@ -999,6 +1000,26 @@ Transform:
   m_Father: {fileID: 1835786853}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &153691741
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153691739}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 592af6bd263017f4389cbee3f1d7104d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &160047351
 GameObject:
   m_ObjectHideFlags: 0
@@ -1159,7 +1180,6 @@ Transform:
   - {fileID: 3348731197551834122}
   - {fileID: 6725211153507361438}
   - {fileID: 4224781008812729829}
-  - {fileID: 1155477662843048086}
   - {fileID: 15399647424132551}
   m_Father: {fileID: 543450652253587716}
   m_RootOrder: 0
@@ -1329,7 +1349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransitionDuration: 0.125
-  m_InteractableSource: {fileID: 8793983735829614817}
+  m_InteractableSource: {fileID: 0}
   m_IgnoreHoverEvents: 0
   m_IgnoreHoverPriorityEvents: 1
   m_IgnoreFocusEvents: 1
@@ -2724,7 +2744,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransitionDuration: 0.125
-  m_InteractableSource: {fileID: 8043270461864723506}
+  m_InteractableSource: {fileID: 0}
   m_IgnoreHoverEvents: 0
   m_IgnoreHoverPriorityEvents: 1
   m_IgnoreFocusEvents: 1
@@ -3328,6 +3348,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 621325304}
+  - component: {fileID: 621325305}
   m_Layer: 0
   m_Name: LeftSquarePuzzle
   m_TagString: Untagged
@@ -3359,6 +3380,26 @@ Transform:
   m_Father: {fileID: 1835786853}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &621325305
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 621325303}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e6fe8caeb88c01148bf554367186050a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &629391956
 GameObject:
   m_ObjectHideFlags: 0
@@ -4375,7 +4416,7 @@ GameObject:
   m_Component:
   - component: {fileID: 834783792}
   m_Layer: 0
-  m_Name: q
+  m_Name: SecondLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7429,6 +7470,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1622196830}
   - component: {fileID: 1622196831}
+  - component: {fileID: 1622196832}
   m_Layer: 0
   m_Name: Square_DialPuzzle
   m_TagString: Untagged
@@ -7444,7 +7486,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1622196829}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.14}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7492,6 +7534,26 @@ MonoBehaviour:
   - {fileID: 2787389060743159263}
   - {fileID: 8205029477859242860}
   isStart: 0
+--- !u!95 &1622196832
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622196829}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e3912dd31a5e9714fb6c8bb76773dbed, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1651869606
 GameObject:
   m_ObjectHideFlags: 0
@@ -7584,7 +7646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransitionDuration: 0.125
-  m_InteractableSource: {fileID: 6198288286700184171}
+  m_InteractableSource: {fileID: 0}
   m_IgnoreHoverEvents: 0
   m_IgnoreHoverPriorityEvents: 1
   m_IgnoreFocusEvents: 1
@@ -9203,7 +9265,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1954158946}
-  - component: {fileID: 1954158947}
   m_Layer: 0
   m_Name: LaserPointer
   m_TagString: Untagged
@@ -9226,36 +9287,6 @@ Transform:
   m_Father: {fileID: 364610184576918096}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -18, y: 90, z: 0}
---- !u!114 &1954158947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1954158945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b892977b6d7e0e4f9245904f3460f90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 02e269cc4c8769b4ba62630f9013bfd1, type: 2}
-  cover:
-  - {fileID: 5750187143404041169}
-  - {fileID: 2741842826077131762}
-  - {fileID: 2770799059818603365}
-  - {fileID: 2428047652507342530}
-  - {fileID: 898168174727730650}
-  - {fileID: 7865024538668902840}
-  - {fileID: 1787286689665896849}
-  nextLaserPuzzle:
-  - {fileID: 2106917171}
-  - {fileID: 471269523}
-  - {fileID: 2026129193}
-  - {fileID: 1006550410}
-  - {fileID: 715749699}
-  - {fileID: 738789325}
-  targetLocalYPosition: 0.135
-  Die: {fileID: 7807627056138353564}
 --- !u!1 &1982862173
 GameObject:
   m_ObjectHideFlags: 0
@@ -9351,7 +9382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransitionDuration: 0.125
-  m_InteractableSource: {fileID: 7045647508037873918}
+  m_InteractableSource: {fileID: 0}
   m_IgnoreHoverEvents: 0
   m_IgnoreHoverPriorityEvents: 1
   m_IgnoreFocusEvents: 1
@@ -9517,7 +9548,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransitionDuration: 0.125
-  m_InteractableSource: {fileID: 7430402597656676336}
+  m_InteractableSource: {fileID: 0}
   m_IgnoreHoverEvents: 0
   m_IgnoreHoverPriorityEvents: 1
   m_IgnoreFocusEvents: 1
@@ -9968,7 +9999,7 @@ Transform:
   - {fileID: 392356344}
   - {fileID: 1370607983}
   m_Father: {fileID: 191995971}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!33 &20361788215806773
 MeshFilter:
@@ -10960,7 +10991,6 @@ GameObject:
   - component: {fileID: 6198288286700184170}
   - component: {fileID: 600928430424731437}
   - component: {fileID: 1299001613880087748}
-  - component: {fileID: 6198288286700184171}
   m_Layer: 0
   m_Name: Chapter3_Hexagon_Puzzle_Light_Pillar2
   m_TagString: Untagged
@@ -11992,15 +12022,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7807627056138353564}
-  m_LocalRotation: {x: 0.6123725, y: -0.61237246, z: -0.35355338, w: 0.35355335}
-  m_LocalPosition: {x: 0.16407806, y: 0.816725, z: -1.6602027}
+  m_LocalRotation: {x: -0.3535534, y: 0.3535534, z: -0.61237246, w: 0.61237246}
+  m_LocalPosition: {x: -0.31382358, y: 0.816725, z: 0.5435628}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 364610184576918096}
-  m_Father: {fileID: 191995971}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: -120, z: -90}
+  m_Father: {fileID: 4945614242931456649}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 60, z: -90}
 --- !u!4 &1156026328456703172
 Transform:
   m_ObjectHideFlags: 0
@@ -12361,7 +12391,6 @@ GameObject:
   - component: {fileID: 7921864249201625163}
   - component: {fileID: 1075468395655527715}
   - component: {fileID: 4859429193351161729}
-  - component: {fileID: 7921864249201625164}
   m_Layer: 0
   m_Name: Chapter3_Hexagon_Puzzle_Light_Pillar3
   m_TagString: Untagged
@@ -13155,7 +13184,6 @@ GameObject:
   - component: {fileID: 7045647508037873917}
   - component: {fileID: 2470243882122317734}
   - component: {fileID: 3118757352243901698}
-  - component: {fileID: 7045647508037873918}
   m_Layer: 0
   m_Name: Chapter3_Hexagon_Puzzle_Light_Pillar5
   m_TagString: Untagged
@@ -15286,7 +15314,7 @@ MonoBehaviour:
       - m_Target: {fileID: 8255886561919253093}
         m_TargetAssemblyTypeName: PianoPuzzleSolver, Assembly-CSharp
         m_MethodName: AddNumber
-        m_Mode: 3
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -15647,7 +15675,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4725382685562132336}
-  m_LocalRotation: {x: -0.0000004023313, y: 0.00000001711438, z: 0.0000002607703, w: -1}
+  m_LocalRotation: {x: -1, y: 0, z: 0, w: 0}
   m_LocalPosition: {x: -0.22268292, y: -0.32631385, z: 0.14575052}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -15657,7 +15685,7 @@ Transform:
   - {fileID: 2118760773603189790}
   m_Father: {fileID: 2178426174815830280}
   m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -180, y: 0, z: 0}
 --- !u!4 &3378841483472724042
 Transform:
   m_ObjectHideFlags: 0
@@ -16077,7 +16105,6 @@ GameObject:
   - component: {fileID: 8043270461864723505}
   - component: {fileID: 3770820319603865351}
   - component: {fileID: 7130687534665650480}
-  - component: {fileID: 8043270461864723506}
   m_Layer: 0
   m_Name: Chapter3_Hexagon_Puzzle_Light_Pillar1
   m_TagString: Untagged
@@ -16468,7 +16495,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6637161603478739438}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5673497, z: 0.7402421}
+  m_LocalPosition: {x: -0, y: 1.057, z: 0.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -17735,6 +17762,7 @@ Transform:
   - {fileID: 7183267278269004614}
   - {fileID: 1416068135930238587}
   - {fileID: 2906491706408875610}
+  - {fileID: 1155477662843048086}
   m_Father: {fileID: 191995971}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -18124,7 +18152,7 @@ MonoBehaviour:
       - m_Target: {fileID: 8255886561919253093}
         m_TargetAssemblyTypeName: PianoPuzzleSolver, Assembly-CSharp
         m_MethodName: AddNumber
-        m_Mode: 3
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -18509,7 +18537,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5026629817904837775}
   m_LocalRotation: {x: 6.123234e-17, y: -1, z: -6.123234e-17, w: 0.0000000754979}
-  m_LocalPosition: {x: 0, y: 0.5673497, z: 0}
+  m_LocalPosition: {x: -0, y: 1.057, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -18757,7 +18785,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4833111341596167295}
-  m_LocalRotation: {x: 0.00000004470348, y: -0.000000017114273, z: -0.00000026077032, w: 1}
+  m_LocalRotation: {x: -1, y: 0, z: 0, w: 0}
   m_LocalPosition: {x: -0.22268292, y: -0.32631385, z: -0.14575148}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -18767,7 +18795,7 @@ Transform:
   - {fileID: 4305014689691805754}
   m_Father: {fileID: 2178426174815830280}
   m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: -360, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -180, y: 0, z: 0}
 --- !u!33 &5341557207658790388
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -18864,7 +18892,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8129033726619251365}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.64106387, y: 0.5673497, z: -0.37011364}
+  m_LocalPosition: {x: 0.641, y: 1.057, z: -0.37}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -18883,7 +18911,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 898168174727730650}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.12, z: 0}
+  m_LocalPosition: {x: 0, y: -0.105, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19376,7 +19404,7 @@ MonoBehaviour:
       - m_Target: {fileID: 8255886561919253093}
         m_TargetAssemblyTypeName: PianoPuzzleSolver, Assembly-CSharp
         m_MethodName: AddNumber
-        m_Mode: 3
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -20083,7 +20111,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 573059126656605095}
   m_LocalRotation: {x: 7.18371e-17, y: -0.981445, z: -4.835526e-17, w: 0.19174382}
-  m_LocalPosition: {x: -0.64106435, y: 0.5673497, z: -0.3701137}
+  m_LocalPosition: {x: -0.641, y: 1.057, z: -0.37}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -20094,121 +20122,6 @@ Transform:
   m_Father: {fileID: 4945614242931456649}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 22.109, z: 0}
---- !u!114 &6198288286700184171
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 573059126656605095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d487bf6681dc6154eac9342cea3308b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
-  m_Colliders:
-  - {fileID: 166309331}
-  m_InteractionLayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_InteractionLayers:
-    m_Bits: 1
-  m_DistanceCalculationMode: 1
-  m_SelectMode: 0
-  m_FocusMode: 1
-  m_CustomReticle: {fileID: 0}
-  m_AllowGazeInteraction: 0
-  m_AllowGazeSelect: 0
-  m_OverrideGazeTimeToSelect: 0
-  m_GazeTimeToSelect: 0.5
-  m_OverrideTimeToAutoDeselectGaze: 0
-  m_TimeToAutoDeselectGaze: 3
-  m_AllowGazeAssistance: 0
-  m_FirstHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FirstSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FirstFocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastFocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Activated:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Deactivated:
-    m_PersistentCalls:
-      m_Calls: []
-  m_StartingHoverFilters: []
-  m_StartingSelectFilters: []
-  m_StartingInteractionStrengthFilters: []
-  m_OnFirstHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnLastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectCanceled:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnActivate:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnDeactivate:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Handle: {fileID: 1596874756281569897}
-  m_Value: 0.5
-  m_ClampedMotion: 1
-  m_MaxAngle: 180
-  m_MinAngle: -180
-  m_AngleIncrement: 0
-  m_PositionTrackedRadius: 0.1
-  m_TwistSensitivity: 0.5
-  m_OnValueChange:
-    m_PersistentCalls:
-      m_Calls: []
-  StartAngle: 0
 --- !u!23 &6226516859967359532
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21317,7 +21230,6 @@ GameObject:
   - component: {fileID: 3801084166017340704}
   - component: {fileID: 7430402597656676335}
   - component: {fileID: 5809845092336231200}
-  - component: {fileID: 7430402597656676336}
   m_Layer: 0
   m_Name: Chapter3_Hexagon_Puzzle_Light_Pillar6
   m_TagString: Untagged
@@ -22094,7 +22006,7 @@ MonoBehaviour:
       - m_Target: {fileID: 8255886561919253093}
         m_TargetAssemblyTypeName: PianoPuzzleSolver, Assembly-CSharp
         m_MethodName: AddNumber
-        m_Mode: 3
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -22252,7 +22164,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2014357294596339952}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.641064, y: 0.5673497, z: 0.37012342}
+  m_LocalPosition: {x: 0.641, y: 1.057, z: 0.37}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -22263,121 +22175,6 @@ Transform:
   m_Father: {fileID: 4945614242931456649}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: -4.29, z: 0}
---- !u!114 &7045647508037873918
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2014357294596339952}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d487bf6681dc6154eac9342cea3308b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
-  m_Colliders:
-  - {fileID: 467429809}
-  m_InteractionLayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_InteractionLayers:
-    m_Bits: 1
-  m_DistanceCalculationMode: 1
-  m_SelectMode: 0
-  m_FocusMode: 1
-  m_CustomReticle: {fileID: 0}
-  m_AllowGazeInteraction: 0
-  m_AllowGazeSelect: 0
-  m_OverrideGazeTimeToSelect: 0
-  m_GazeTimeToSelect: 0.5
-  m_OverrideTimeToAutoDeselectGaze: 0
-  m_TimeToAutoDeselectGaze: 3
-  m_AllowGazeAssistance: 0
-  m_FirstHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FirstSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FirstFocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastFocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Activated:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Deactivated:
-    m_PersistentCalls:
-      m_Calls: []
-  m_StartingHoverFilters: []
-  m_StartingSelectFilters: []
-  m_StartingInteractionStrengthFilters: []
-  m_OnFirstHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnLastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectCanceled:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnActivate:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnDeactivate:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Handle: {fileID: 7045647508037873917}
-  m_Value: 0.5
-  m_ClampedMotion: 1
-  m_MaxAngle: 180
-  m_MinAngle: -180
-  m_AngleIncrement: 0
-  m_PositionTrackedRadius: 0.1
-  m_TwistSensitivity: 0.5
-  m_OnValueChange:
-    m_PersistentCalls:
-      m_Calls: []
-  StartAngle: 0
 --- !u!33 &7071510605196964724
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -23638,121 +23435,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6637161603478739438}
   m_Mesh: {fileID: 2679298013483937754, guid: e8db49b4b2b96d941a4159657b0c41c2, type: 3}
---- !u!114 &7430402597656676336
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6637161603478739438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d487bf6681dc6154eac9342cea3308b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
-  m_Colliders:
-  - {fileID: 1651869608}
-  m_InteractionLayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_InteractionLayers:
-    m_Bits: 1
-  m_DistanceCalculationMode: 1
-  m_SelectMode: 0
-  m_FocusMode: 1
-  m_CustomReticle: {fileID: 0}
-  m_AllowGazeInteraction: 0
-  m_AllowGazeSelect: 0
-  m_OverrideGazeTimeToSelect: 0
-  m_GazeTimeToSelect: 0.5
-  m_OverrideTimeToAutoDeselectGaze: 0
-  m_TimeToAutoDeselectGaze: 3
-  m_AllowGazeAssistance: 0
-  m_FirstHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FirstSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FirstFocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastFocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Activated:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Deactivated:
-    m_PersistentCalls:
-      m_Calls: []
-  m_StartingHoverFilters: []
-  m_StartingSelectFilters: []
-  m_StartingInteractionStrengthFilters: []
-  m_OnFirstHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnLastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectCanceled:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnActivate:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnDeactivate:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Handle: {fileID: 3801084166017340704}
-  m_Value: 0.5
-  m_ClampedMotion: 1
-  m_MaxAngle: 180
-  m_MinAngle: -180
-  m_AngleIncrement: 0
-  m_PositionTrackedRadius: 0.1
-  m_TwistSensitivity: 0.5
-  m_OnValueChange:
-    m_PersistentCalls:
-      m_Calls: []
-  StartAngle: 0
 --- !u!23 &7432322589904213595
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -24206,7 +23888,7 @@ MonoBehaviour:
       - m_Target: {fileID: 8255886561919253093}
         m_TargetAssemblyTypeName: PianoPuzzleSolver, Assembly-CSharp
         m_MethodName: AddNumber
-        m_Mode: 3
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -24831,7 +24513,7 @@ MonoBehaviour:
       - m_Target: {fileID: 8255886561919253093}
         m_TargetAssemblyTypeName: PianoPuzzleSolver, Assembly-CSharp
         m_MethodName: AddNumber
-        m_Mode: 3
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -24978,7 +24660,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1413391446324760840}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5673497, z: -0.74023235}
+  m_LocalPosition: {x: -0, y: 1.057, z: -0.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -24989,121 +24671,6 @@ Transform:
   m_Father: {fileID: 4945614242931456649}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -39.954, z: 0}
---- !u!114 &7921864249201625164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1413391446324760840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d487bf6681dc6154eac9342cea3308b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
-  m_Colliders:
-  - {fileID: 586961031}
-  m_InteractionLayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_InteractionLayers:
-    m_Bits: 1
-  m_DistanceCalculationMode: 1
-  m_SelectMode: 0
-  m_FocusMode: 1
-  m_CustomReticle: {fileID: 0}
-  m_AllowGazeInteraction: 0
-  m_AllowGazeSelect: 0
-  m_OverrideGazeTimeToSelect: 0
-  m_GazeTimeToSelect: 0.5
-  m_OverrideTimeToAutoDeselectGaze: 0
-  m_TimeToAutoDeselectGaze: 3
-  m_AllowGazeAssistance: 0
-  m_FirstHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FirstSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FirstFocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastFocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Activated:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Deactivated:
-    m_PersistentCalls:
-      m_Calls: []
-  m_StartingHoverFilters: []
-  m_StartingSelectFilters: []
-  m_StartingInteractionStrengthFilters: []
-  m_OnFirstHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnLastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectCanceled:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnActivate:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnDeactivate:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Handle: {fileID: 7921864249201625163}
-  m_Value: 0.5
-  m_ClampedMotion: 1
-  m_MaxAngle: 180
-  m_MinAngle: -180
-  m_AngleIncrement: 0
-  m_PositionTrackedRadius: 0.1
-  m_TwistSensitivity: 0.5
-  m_OnValueChange:
-    m_PersistentCalls:
-      m_Calls: []
-  StartAngle: 0
 --- !u!23 &7925278266856154601
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -25343,7 +24910,7 @@ MonoBehaviour:
       - m_Target: {fileID: 8255886561919253093}
         m_TargetAssemblyTypeName: PianoPuzzleSolver, Assembly-CSharp
         m_MethodName: AddNumber
-        m_Mode: 3
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -25374,7 +24941,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3703163240543864937}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.6410642, y: 0.5673497, z: 0.37012383}
+  m_LocalPosition: {x: -0.641, y: 1.057, z: 0.37}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -25385,121 +24952,6 @@ Transform:
   m_Father: {fileID: 4945614242931456649}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 33.112, z: 0}
---- !u!114 &8043270461864723506
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3703163240543864937}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d487bf6681dc6154eac9342cea3308b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
-  m_Colliders:
-  - {fileID: 1198474239}
-  m_InteractionLayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_InteractionLayers:
-    m_Bits: 1
-  m_DistanceCalculationMode: 1
-  m_SelectMode: 0
-  m_FocusMode: 1
-  m_CustomReticle: {fileID: 0}
-  m_AllowGazeInteraction: 0
-  m_AllowGazeSelect: 0
-  m_OverrideGazeTimeToSelect: 0
-  m_GazeTimeToSelect: 0.5
-  m_OverrideTimeToAutoDeselectGaze: 0
-  m_TimeToAutoDeselectGaze: 3
-  m_AllowGazeAssistance: 0
-  m_FirstHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FirstSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FirstFocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastFocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Activated:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Deactivated:
-    m_PersistentCalls:
-      m_Calls: []
-  m_StartingHoverFilters: []
-  m_StartingSelectFilters: []
-  m_StartingInteractionStrengthFilters: []
-  m_OnFirstHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnLastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectCanceled:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnActivate:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnDeactivate:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Handle: {fileID: 8043270461864723505}
-  m_Value: 0.5
-  m_ClampedMotion: 1
-  m_MaxAngle: 180
-  m_MinAngle: -180
-  m_AngleIncrement: 0
-  m_PositionTrackedRadius: 0.1
-  m_TwistSensitivity: 0.5
-  m_OnValueChange:
-    m_PersistentCalls:
-      m_Calls: []
-  StartAngle: 0
 --- !u!4 &8053152358130355705
 Transform:
   m_ObjectHideFlags: 0
@@ -25606,7 +25058,6 @@ GameObject:
   - component: {fileID: 5464615596273200344}
   - component: {fileID: 281959835437562971}
   - component: {fileID: 8793983735829614816}
-  - component: {fileID: 8793983735829614817}
   m_Layer: 0
   m_Name: Chapter3_Hexagon_Puzzle_Light_Pillar4
   m_TagString: Untagged
@@ -25971,7 +25422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77b5398c2bbbe314babcfbf237b214ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilePassword: 070000000a00000003000000050000000400000000000000
+  tilePassword: 070a03050400
   piano:
   - {fileID: 9063878367196204519}
   - {fileID: 5121369390570433992}
@@ -25985,7 +25436,6 @@ MonoBehaviour:
   - {fileID: 8597646009337485351}
   - {fileID: 8406109339779577347}
   - {fileID: 8034960500929045219}
-  count: 0
   pokeColliders: []
 --- !u!33 &8266079524956874749
 MeshFilter:
@@ -26324,7 +25774,7 @@ MonoBehaviour:
       - m_Target: {fileID: 8255886561919253093}
         m_TargetAssemblyTypeName: PianoPuzzleSolver, Assembly-CSharp
         m_MethodName: AddNumber
-        m_Mode: 3
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -26400,7 +25850,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3137220036627460044}
-  m_LocalRotation: {x: 0.000000029802319, y: -0.000000008052863, z: 1, w: 0.000000116228065}
+  m_LocalRotation: {x: 5.4636307e-10, y: 0.00000008940697, z: 0.6540936, w: 0.75641364}
   m_LocalPosition: {x: -0.017526593, y: -0.106414974, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -26413,7 +25863,7 @@ Transform:
   - {fileID: 433122349717699149}
   m_Father: {fileID: 1416068135930238587}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 81.702}
 --- !u!1 &8362051629613420331
 GameObject:
   m_ObjectHideFlags: 0
@@ -26670,7 +26120,7 @@ MonoBehaviour:
       - m_Target: {fileID: 8255886561919253093}
         m_TargetAssemblyTypeName: PianoPuzzleSolver, Assembly-CSharp
         m_MethodName: AddNumber
-        m_Mode: 3
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -27360,7 +26810,7 @@ MonoBehaviour:
       - m_Target: {fileID: 8255886561919253093}
         m_TargetAssemblyTypeName: PianoPuzzleSolver, Assembly-CSharp
         m_MethodName: AddNumber
-        m_Mode: 3
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -27895,7 +27345,7 @@ MonoBehaviour:
       - m_Target: {fileID: 8255886561919253093}
         m_TargetAssemblyTypeName: PianoPuzzleSolver, Assembly-CSharp
         m_MethodName: AddNumber
-        m_Mode: 3
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -28175,121 +27625,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8793983735829614817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8129033726619251365}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d487bf6681dc6154eac9342cea3308b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
-  m_Colliders:
-  - {fileID: 1837896302}
-  m_InteractionLayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_InteractionLayers:
-    m_Bits: 1
-  m_DistanceCalculationMode: 1
-  m_SelectMode: 0
-  m_FocusMode: 1
-  m_CustomReticle: {fileID: 0}
-  m_AllowGazeInteraction: 0
-  m_AllowGazeSelect: 0
-  m_OverrideGazeTimeToSelect: 0
-  m_GazeTimeToSelect: 0.5
-  m_OverrideTimeToAutoDeselectGaze: 0
-  m_TimeToAutoDeselectGaze: 3
-  m_AllowGazeAssistance: 0
-  m_FirstHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FirstSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FirstFocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastFocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Activated:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Deactivated:
-    m_PersistentCalls:
-      m_Calls: []
-  m_StartingHoverFilters: []
-  m_StartingSelectFilters: []
-  m_StartingInteractionStrengthFilters: []
-  m_OnFirstHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnLastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectCanceled:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnActivate:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnDeactivate:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Handle: {fileID: 5464615596273200344}
-  m_Value: 0.5
-  m_ClampedMotion: 1
-  m_MaxAngle: 180
-  m_MinAngle: -180
-  m_AngleIncrement: 0
-  m_PositionTrackedRadius: 0.1
-  m_TwistSensitivity: 0.5
-  m_OnValueChange:
-    m_PersistentCalls:
-      m_Calls: []
-  StartAngle: 0
 --- !u!4 &8829930756367632144
 Transform:
   m_ObjectHideFlags: 0
@@ -28836,7 +28171,7 @@ MonoBehaviour:
       - m_Target: {fileID: 8255886561919253093}
         m_TargetAssemblyTypeName: PianoPuzzleSolver, Assembly-CSharp
         m_MethodName: AddNumber
-        m_Mode: 3
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
