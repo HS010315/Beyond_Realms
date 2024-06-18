@@ -4,7 +4,13 @@ public class KeyInteraction : MonoBehaviour
 {
     public GameObject doorObject;
     public GameObject rotateKey;
+    public float targetAngleX = 0f;
     public float targetAngleY = 0f;
+    public float targetAngleZ = 0f;
+
+    // 애니메이션 상태 설정 함수를 델리게이트로 정의
+    public delegate void SetAnimationState(Animator animator);
+    public SetAnimationState setAnimationState;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -15,7 +21,6 @@ public class KeyInteraction : MonoBehaviour
             Debug.Log(rotateKey);
             Destroy(gameObject);
             rotateKey.SetActive(true);
-
         }
     }
 
@@ -23,27 +28,23 @@ public class KeyInteraction : MonoBehaviour
     {
         if (rotateKey.activeSelf)
         {
-            // 실시간 생성키의 Y rot 값 == 현재 Y rot 값과 비슷해지면 도어오픈
-
             // 현재 회전 값을 저장
-            float currentAngleY = rotateKey.transform.eulerAngles.y;    // 현재 키의 Y 회전값을 계속해서 업데이트            
-            Vector3 currentRotation = rotateKey.transform.localEulerAngles; // 현재 키의 X,Y,Z 회전값을 계속해서 업데이트
+            float currentAngleX = rotateKey.transform.eulerAngles.x;
+            float currentAngleY = rotateKey.transform.eulerAngles.y;
+            float currentAngleZ = rotateKey.transform.eulerAngles.z;
 
-            // 목표 회전 각도 설정
-            Vector3 targetRotation = new Vector3(currentRotation.x, targetAngleY, currentRotation.z);
-
-            //// 회전을 적용
-            //rotateKey.transform.eulerAngles = targetRotation;
-            if (Mathf.Approximately(currentAngleY, targetAngleY))
+            // 목표 회전 각도와 비교하여 문을 열기
+            if (Mathf.Approximately(currentAngleX, targetAngleX) &&
+                Mathf.Approximately(currentAngleY, targetAngleY) &&
+                Mathf.Approximately(currentAngleZ, targetAngleZ))
             {
                 Debug.Log("각도 일치");
                 Animator animator = doorObject.GetComponent<Animator>();
-                if (animator != null)
+                if (animator != null && setAnimationState != null)
                 {
-                    animator.SetInteger("TutorialDoorState", 1);
+                    setAnimationState(animator);
                 }
-            } 
+            }
         }
     }
-
 }
