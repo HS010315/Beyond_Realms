@@ -11,13 +11,21 @@ public class DialPuzzleClearCheck : MonoBehaviour
     {
         if (isStart)
         {
+            bool allDialsAligned = true;
+
             foreach (var dial in rotateDials)
             {
                 float currentAngle = NormalizeAngle(dial.transform.localEulerAngles.z);
-                if (Mathf.Approximately(currentAngle, 0f) || Mathf.Approximately(currentAngle, 360f))
+                if (currentAngle != 0f)
                 {
-                    PuzzleClear();
+                    allDialsAligned = false;
+                    break;
                 }
+            }
+
+            if (allDialsAligned)
+            {
+                PuzzleClear();
             }
         }
     }
@@ -39,7 +47,7 @@ public class DialPuzzleClearCheck : MonoBehaviour
 
     public void PuzzleClear()
     {
-        // 애니메이션 실행 함수
+        // 클리어 처리
         Debug.Log("Puzzle Cleared!");
     }
 }
