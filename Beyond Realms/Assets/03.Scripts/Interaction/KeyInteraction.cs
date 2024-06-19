@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class KeyInteraction : MonoBehaviour
 {
-    public GameObject doorObject;
+    public GameObject aniKey;
     public GameObject rotateKey;
     public float targetAngleX = 0f;
     public float targetAngleY = 0f;
     public float targetAngleZ = 0f;
 
     // 애니메이션 상태 설정 함수를 델리게이트로 정의
-    public delegate void SetAnimationState(Animator animator);
+    public delegate void SetAnimationState();
     public SetAnimationState setAnimationState;
 
     private void OnCollisionEnter(Collision collision)
@@ -39,10 +39,14 @@ public class KeyInteraction : MonoBehaviour
                 Mathf.Approximately(currentAngleZ, targetAngleZ))
             {
                 Debug.Log("각도 일치");
-                Animator animator = doorObject.GetComponent<Animator>();
-                if (animator != null && setAnimationState != null)
+                //Animator animator = doorObject.GetComponent<Animator>();
+                //if (animator != null && setAnimationState != null)
+                //{
+                //   setAnimationState(animator);
+                //}
+                if (setAnimationState != null)
                 {
-                    setAnimationState(animator);
+                    setAnimationState();
                 }
             }
         }

@@ -45,14 +45,20 @@ public class NightVisionToggle : MonoBehaviour
     void ActivateVision()
     {
         visionObject.SetActive(true);
-        nonVisionObject.SetActive(false);
+        if (nonVisionObject != null) 
+        {
+            nonVisionObject.SetActive(false);
+        }
         visionActivated = true;
     }
 
     void DeactivateVision()
     {
         visionObject.SetActive(false);
-        nonVisionObject.SetActive(true);
+        if (nonVisionObject != null)
+        {
+            nonVisionObject.SetActive(true);
+        }
         visionActivated = false;
     }
 }

@@ -22,6 +22,7 @@ TagManager:
   - UpButton
   - DownButton
   - Pot
+  - boxPuzzle
   layers:
   - Default
   - TransparentFX
