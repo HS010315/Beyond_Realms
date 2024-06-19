@@ -20123,7 +20123,8 @@ PrefabInstance:
       propertyPath: m_AnchorRotateReferenceFrame
       value: 
       objectReference: {fileID: 669136723}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2025075165, guid: 3d745c4cd1e6338438e5362fc46d943e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3d745c4cd1e6338438e5362fc46d943e, type: 3}
 --- !u!4 &6338083801664947145
 Transform:
@@ -21932,6 +21933,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 37b51986b4e445546823d6e4f14aa71b, type: 2}
+    - target: {fileID: 3953912055915885289, guid: f5c3c8564cf1d9f478f99933fb1adb9d, type: 3}
+      propertyPath: StartAngle
+      value: -90
+      objectReference: {fileID: 0}
     - target: {fileID: 3953912055915885289, guid: f5c3c8564cf1d9f478f99933fb1adb9d, type: 3}
       propertyPath: m_TwistSensitivity
       value: 0.1
