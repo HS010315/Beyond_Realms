@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Magnet : MonoBehaviour
 {
-    public float attractionDistance = 10.0f;  
-    public float attractionForce = 10.0f;    
-    public string targetTag = "Key";    
+    public float attractionDistance = 10.0f;
+    public float attractionForce = 10.0f;
+    public List<string> targetTags = new List<string> { "Key", "IronBall" };
 
     void FixedUpdate()
     {
@@ -14,14 +14,17 @@ public class Magnet : MonoBehaviour
 
         foreach (Collider collider in colliders)
         {
-            if (collider.CompareTag(targetTag))
+            foreach (string targetTag in targetTags)
             {
-                Vector3 direction = transform.position - collider.transform.position;
-                direction.Normalize();
-                Rigidbody rb = collider.GetComponent<Rigidbody>();
-                if (rb != null)
+                if (collider.CompareTag(targetTag))
                 {
-                    rb.AddForce(direction * attractionForce * Time.fixedDeltaTime, ForceMode.Acceleration);
+                    Vector3 direction = transform.position - collider.transform.position;
+                    direction.Normalize();
+                    Rigidbody rb = collider.GetComponent<Rigidbody>();
+                    if (rb != null)
+                    {
+                        rb.AddForce(direction * attractionForce * Time.fixedDeltaTime, ForceMode.Acceleration);
+                    }
                 }
             }
         }
