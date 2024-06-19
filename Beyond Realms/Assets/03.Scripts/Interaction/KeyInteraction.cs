@@ -33,22 +33,25 @@ public class KeyInteraction : MonoBehaviour
             float currentAngleY = rotateKey.transform.eulerAngles.y;
             float currentAngleZ = rotateKey.transform.eulerAngles.z;
 
-            // 목표 회전 각도와 비교하여 문을 열기
-            if (Mathf.Approximately(currentAngleX, targetAngleX) &&
-                Mathf.Approximately(currentAngleY, targetAngleY) &&
-                Mathf.Approximately(currentAngleZ, targetAngleZ))
+            // 현재 각도 디버그 출력
+            Debug.Log($"Current Angles: X = {currentAngleX}, Y = {currentAngleY}, Z = {currentAngleZ}");
+
+            // 각도를 비교할 때 작은 오차를 허용
+            if (IsApproximatelyEqual(currentAngleX, targetAngleX) &&
+                IsApproximatelyEqual(currentAngleY, targetAngleY) &&
+                IsApproximatelyEqual(currentAngleZ, targetAngleZ))
             {
                 Debug.Log("각도 일치");
-                //Animator animator = doorObject.GetComponent<Animator>();
-                //if (animator != null && setAnimationState != null)
-                //{
-                //   setAnimationState(animator);
-                //}
                 if (setAnimationState != null)
                 {
                     setAnimationState();
                 }
             }
         }
+    }
+
+    bool IsApproximatelyEqual(float a, float b, float tolerance = 0.1f)
+    {
+        return Mathf.Abs(a - b) < tolerance;
     }
 }

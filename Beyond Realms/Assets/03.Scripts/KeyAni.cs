@@ -4,6 +4,7 @@ public class KeyAni : MonoBehaviour
 {
     public KeyInteraction keyInteraction;
     private Animator animator;
+    public GameObject keyObject;
 
     void Start()
     {
@@ -17,6 +18,7 @@ public class KeyAni : MonoBehaviour
         {
             animator.SetInteger("TutorialDoorState", 1);
             animator.SetInteger("Ani_Key_State", 1);
+            Destroy(keyObject);
         }
     }
 }
