@@ -6,7 +6,7 @@ public class PotInteraction : MonoBehaviour
 {
     public GameObject pot;
     public GameObject activePot;
-    //public GameObject tablePuzzleAni;
+    public GameObject AniShelf;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -17,12 +17,12 @@ public class PotInteraction : MonoBehaviour
         }
     }
 
-   //void Update()
-   // {
-   //     Animator animator = tablePuzzleAni.GetComponent<Animator>();
-   //     if (activePot.activeSelf)
-   //     {
-   //         animator.SetInteger("123123", 1);
-   //     }
-   // }
+   void Update()
+   {
+        Animator animator = AniShelf.GetComponent<Animator>();
+        if (activePot.activeSelf)
+        {
+            animator.SetInteger("Ani_Shelf_State", 1);
+        }
+   }
 }
