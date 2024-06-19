@@ -67,10 +67,10 @@ AnimatorStateMachine:
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
-  m_EntryPosition: {x: 50, y: 120, z: 0}
+  m_EntryPosition: {x: 10, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: 822814619473854071}
+  m_DefaultState: {fileID: 3586600323494700156}
 --- !u!1102 &-6933766670858185801
 AnimatorState:
   serializedVersion: 6
@@ -293,7 +293,7 @@ AnimatorController:
   - m_Name: SQ_LeftSquare_State
     m_Type: 3
     m_DefaultFloat: 0
-    m_DefaultInt: 0
+    m_DefaultInt: 2
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
   m_AnimatorLayers:
