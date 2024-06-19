@@ -23,6 +23,7 @@ TagManager:
   - DownButton
   - Pot
   - boxPuzzle
+  - IronBall
   layers:
   - Default
   - TransparentFX
