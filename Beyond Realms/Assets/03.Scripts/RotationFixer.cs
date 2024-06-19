@@ -4,11 +4,11 @@ using System.Collections;
 
 public class RotationFixer : MonoBehaviour
 {
-    private List<Transform> childObjects = new List<Transform>();
-
     public float minAngle = -360f;
     public float maxAngle = 360f;
     public float angleDiff = 60f;
+
+    public Vector3 tempPos;
 
     private void Update()
     {
@@ -25,21 +25,21 @@ public class RotationFixer : MonoBehaviour
         transform.eulerAngles = new Vector3(0f, snappedAngle, 0f);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("boxPuzzle") && !childObjects.Contains(other.transform))
+        if (other.CompareTag("boxPuzzle"))
         {
-            childObjects.Add(other.transform);
             other.transform.SetParent(transform);
+            tempPos = other.transform.position;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("boxPuzzle") && childObjects.Contains(other.transform))
+        if (other.CompareTag("boxPuzzle"))
         {
-            childObjects.Remove(other.transform);
             other.transform.SetParent(null);
+            other.transform.position = tempPos;
         }
     }
 }
