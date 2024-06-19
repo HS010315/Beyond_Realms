@@ -20530,7 +20530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a745ba23319b614d808c0b7d62d8c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorObject: {fileID: 1651123599}
+  aniKey: {fileID: 1651123599}
   rotateKey: {fileID: 1815904867}
   targetAngleX: 0
   targetAngleY: 270
