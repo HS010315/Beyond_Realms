@@ -11212,6 +11212,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1651123600}
   - component: {fileID: 1651123601}
+  - component: {fileID: 1651123603}
+  - component: {fileID: 1651123602}
   m_Layer: 10
   m_Name: Tutorial_DummyLocker_Main
   m_TagString: Untagged
@@ -11278,6 +11280,37 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &1651123602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1651123599}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c3003b1410f3954a831225ce5f04529, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyInteraction: {fileID: 1651123603}
+  animator: {fileID: 1651123601}
+--- !u!114 &1651123603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1651123599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a745ba23319b614d808c0b7d62d8c82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aniKey: {fileID: 1651123599}
+  rotateKey: {fileID: 1815904867}
+  targetAngleX: 0
+  targetAngleY: 270
+  targetAngleZ: 0
 --- !u!114 &1653473494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16113,7 +16146,7 @@ GameObject:
   - component: {fileID: 3060183879054878851}
   - component: {fileID: 1792820662402364643}
   - component: {fileID: 5661777109973941479}
-  - component: {fileID: 5661777109973941480}
+  - component: {fileID: 5661777109973941481}
   m_Layer: 0
   m_Name: Tutorial_DummyLocker_KeyHole
   m_TagString: KeyHole
@@ -20518,7 +20551,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.042338155, y: 0.023975369, z: 0.09956227}
   m_Center: {x: -0.054474335, y: -0.4602112, z: 0.69741994}
---- !u!114 &5661777109973941480
+--- !u!114 &5661777109973941481
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20527,14 +20560,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1963947993244133703}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a745ba23319b614d808c0b7d62d8c82, type: 3}
+  m_Script: {fileID: 11500000, guid: 4c3003b1410f3954a831225ce5f04529, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aniKey: {fileID: 1651123599}
-  rotateKey: {fileID: 1815904867}
-  targetAngleX: 0
-  targetAngleY: 270
-  targetAngleZ: 0
+  keyInteraction: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!23 &5663815255556412940
 MeshRenderer:
   m_ObjectHideFlags: 0
