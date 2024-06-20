@@ -16,6 +16,9 @@ public class PianoPuzzle : MonoBehaviour
     private Vector3 startPos;
     private ConfigurableJoint joint;
 
+    //public AudioSource wrongSound;
+    //public AudioSource rightSound;
+
     //AudioSource sound;
 
     public bool isPressed = false;
@@ -74,8 +77,10 @@ public class PianoPuzzle : MonoBehaviour
 
     public void CorrectSound()
     {
+        //rightSound.Play();
     }
     public void InCorrectSound()
     {
+        //wrongSound.Play();
     }
 }

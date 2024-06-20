@@ -17,6 +17,14 @@ public class LightController : MonoBehaviour
     public void Start()
     {
         startLight.intensity = 0f;
+        foreach(var lights1 in firstLights)
+        {
+            lights1.intensity = 0f;
+        }
+        foreach(var lights2 in secondLights)
+        {
+            lights2.intensity = 0f;
+        }
         isStart = true;
     }
 

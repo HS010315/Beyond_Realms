@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PianoPuzzleSolver : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class PianoPuzzleSolver : MonoBehaviour
     public PianoPuzzle[] piano;
 
     public GameObject[] pokeColliders;
+
+    public UnityEvent clearPuzzle;
 
     private void Start()
     {
@@ -59,7 +62,7 @@ public class PianoPuzzleSolver : MonoBehaviour
             {
                 tile.CorrectSound();
             }
-            Debug.Log("µùµ¿´ó");
+            clearPuzzle.Invoke();
             pokeColliders[0].SetActive(false);
             pokeColliders[1].SetActive(false);
         }
@@ -70,7 +73,6 @@ public class PianoPuzzleSolver : MonoBehaviour
             {
                 tile.InCorrectSound();
             }
-            Debug.Log("¶¯");
             userTileClicked.Clear();
         }
     }

@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class LastBoxPuzzle : MonoBehaviour
 {
-    public bool rightBoxOpened;
-    public bool leftBoxOpened;
-    public bool isCleared;
+    public bool rightBoxOpened = false;
+    public bool leftBoxOpened = false;
+    public bool isCleared = false;
+
+    public GameObject[] handColliders;
 
     public Animator lBPani;
 
     public GameObject activatePuzzle;
-    public GameObject animationPuzzle;
+    public GameObject[] animationPuzzle;
     public GameObject enigmaBox;
     void Start()
     {
@@ -40,11 +42,34 @@ public class LastBoxPuzzle : MonoBehaviour
     void ActivatePuzzle()
     {
         activatePuzzle.SetActive(true);
-        animationPuzzle.SetActive(false);
+        foreach(var button in animationPuzzle)
+        {
+            button.SetActive(false);
+        }
+        handColliders[0].SetActive(true);
+        handColliders[1].SetActive(true);
     }
     void ClearedPuzzle()
     {
-        animationPuzzle.SetActive(true);
+        foreach (var button in animationPuzzle)
+        {
+            button.SetActive(true);
+        }
         activatePuzzle.SetActive(false) ;
+        handColliders[0].SetActive(false);
+        handColliders[1].SetActive(false);
+    }
+
+    public void LeftBoxOpened()
+    {
+        leftBoxOpened = true;
+    }
+    public void RightBoxOpened()
+    {
+        rightBoxOpened = true;
+    }
+    public void PuzzleCleared()
+    {
+        isCleared = true;
     }
 }

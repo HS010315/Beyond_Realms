@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DialPuzzleClearCheck : MonoBehaviour
 {
     public GameObject[] rotateDials;
     public bool isStart = false;
+
+    public UnityEvent clearPuzzle;
 
     void Update()
     {
@@ -47,7 +50,6 @@ public class DialPuzzleClearCheck : MonoBehaviour
 
     public void PuzzleClear()
     {
-        // 클리어 처리
-        Debug.Log("Puzzle Cleared!");
+        clearPuzzle.Invoke();
     }
 }
