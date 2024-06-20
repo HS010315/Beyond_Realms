@@ -14,8 +14,6 @@ public class KeyInteraction : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        GameObject gameObject = collision.gameObject;
-
         if (gameObject.CompareTag("Key"))
         {
             Debug.Log(rotateKey);

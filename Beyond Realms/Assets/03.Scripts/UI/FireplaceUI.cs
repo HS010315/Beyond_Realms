@@ -1,16 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
-public class FireplaceUI : MonoBehaviour
+public class FirePlaceUI : MonoBehaviour
 {
     public GameObject uiPanelObject;
     public Text uiText;
     public float fadeDuration = 0.5f; // 페이드 인/아웃 지속 시간
-    private CanvasGroup canvasGroup;
+    public GameObject referenceObject; // 거리를 측정할 참조 오브젝트
+    public float fadeDistanceThreshold = 2.0f; // 페이드 인을 시작할 최대 거리
 
-    // Start is called before the first frame update
+    private CanvasGroup canvasGroup;
+    private bool isFading = false;
+
     void Start()
     {
         if (uiPanelObject != null)
@@ -20,64 +22,68 @@ public class FireplaceUI : MonoBehaviour
             {
                 canvasGroup = uiPanelObject.AddComponent<CanvasGroup>();
             }
-            canvasGroup.alpha = 0f; 
+
+            // 초기에는 페이드 아웃 상태로 설정
+            canvasGroup.alpha = 0f;
+            uiPanelObject.SetActive(false);
+        }
+
+        if (uiText != null)
+        {
+            uiText.gameObject.SetActive(false);
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
+        // 참조 오브젝트와의 거리 측정
+        float distance = Vector3.Distance(transform.position, referenceObject.transform.position);
 
+        if (distance <= fadeDistanceThreshold && !isFading)
+        {
+            // 패널과 텍스트를 페이드 인
+            StartCoroutine(FadeInPanelAndText());
+        }
+        else if (distance > fadeDistanceThreshold && !isFading)
+        {
+            // 패널과 텍스트를 페이드 아웃
+            StartCoroutine(FadeOutPanelAndText());
+        }
     }
 
-    IEnumerator FadeCanvasGroup(CanvasGroup cg, float startAlpha, float endAlpha, float duration)
+    IEnumerator FadeInPanelAndText()
     {
-        float elapsedTime = 0f;
+        isFading = true;
+        uiPanelObject.SetActive(true);
 
-        while (elapsedTime < duration)
+        float elapsedTime = 0f;
+        while (elapsedTime < fadeDuration)
         {
-            cg.alpha = Mathf.Lerp(startAlpha, endAlpha, elapsedTime / duration);
+            canvasGroup.alpha = Mathf.Lerp(0f, 1f, elapsedTime / fadeDuration);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
+        canvasGroup.alpha = 1f;
 
-        cg.alpha = endAlpha;
-
-        if (endAlpha == 0f) // 페이드 아웃 후에는 텍스트를 비활성화합니다.
-        {
-            if (uiText != null)
-            {
-                uiText.gameObject.SetActive(false);
-            }
-        }
-        else // 페이드 인 후에는 텍스트를 활성화합니다.
-        {
-            if (uiText != null)
-            {
-                uiText.gameObject.SetActive(true);
-            }
-        }
+        uiText.gameObject.SetActive(true);
+        isFading = false;
     }
 
-    void OnCollisionEnter(Collision collision)
+    IEnumerator FadeOutPanelAndText()
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            if (uiPanelObject != null)
-            {
-                StartCoroutine(FadeCanvasGroup(canvasGroup, canvasGroup.alpha, 1f, fadeDuration));
-            }
-        }
-    }
+        isFading = true;
 
-    void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
+        float elapsedTime = 0f;
+        while (elapsedTime < fadeDuration)
         {
-            if (uiPanelObject != null)
-            {
-                StartCoroutine(FadeCanvasGroup(canvasGroup, canvasGroup.alpha, 0f, fadeDuration));
-            }
+            canvasGroup.alpha = Mathf.Lerp(1f, 0f, elapsedTime / fadeDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
         }
+        canvasGroup.alpha = 0f;
+
+        uiPanelObject.SetActive(false);
+        uiText.gameObject.SetActive(false);
+        isFading = false;
     }
 }
