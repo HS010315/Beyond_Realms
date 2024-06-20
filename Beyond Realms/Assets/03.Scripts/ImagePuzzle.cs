@@ -7,9 +7,13 @@ public class ImagePuzzle : MonoBehaviour
     public GameObject objectA;
     public GameObject objectB;
     public GameObject objectC;
+    public Transform dial1;
+    public Transform dial2;
+    public Transform dial3;
+    public Transform dial4;
     public Animator animator;
 
-    // Update is called once per frame
+
     void Update()
     {
         float angleA = NormalizeAngle(objectA.transform.eulerAngles.y);
@@ -22,10 +26,24 @@ public class ImagePuzzle : MonoBehaviour
             if (animator != null)
             {
                 animator.SetInteger("Ani_Table_ImagePuzzle_State", 1);
-                Destroy(objectA);
-                Destroy(objectB);
-                Destroy(objectC);               
             }
+        }
+        CheckLockerDial();
+    }
+
+
+
+    void CheckLockerDial()
+    {
+        float dial1Y = NormalizeRotation(dial1.rotation.eulerAngles.y);
+        float dial2Y = NormalizeRotation(dial2.rotation.eulerAngles.y);
+        float dial3Y = NormalizeRotation(dial3.rotation.eulerAngles.y);
+        float dial4Y = NormalizeRotation(dial4.rotation.eulerAngles.y);
+
+        if ((dial1Y == 108 && dial2Y == 216 && dial3Y == 324 && dial4Y == 252) ||
+            (dial1Y == -252 && dial2Y == -144 && dial3Y == -36 && dial4Y == -108))
+        {
+            animator.SetInteger("Ani_Table_ImagePuzzle_State", 2);
         }
     }
 
@@ -38,4 +56,14 @@ public class ImagePuzzle : MonoBehaviour
         }
         return angle;
     }
+
+    float NormalizeRotation(float angle)
+    {
+        if (angle > 180)
+        {
+            angle -= 360;
+        }
+        return angle;
+    }
+
 }

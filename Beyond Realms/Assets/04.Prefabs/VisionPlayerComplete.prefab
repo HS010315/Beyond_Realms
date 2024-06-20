@@ -4645,6 +4645,7 @@ MonoBehaviour:
   rightHand: {fileID: 9090638159397605057}
   activationDistance: 0.05
   visionObject: {fileID: 0}
+  nonVisionObject: {fileID: 0}
 --- !u!4 &9090638158030212640 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9014170785475729501, guid: 895f6f3c2d334633b5800312285058d2, type: 3}

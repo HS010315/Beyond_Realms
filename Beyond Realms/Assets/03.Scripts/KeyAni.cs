@@ -18,7 +18,7 @@ public class KeyAni : MonoBehaviour
         {
             animator.SetInteger("TutorialDoorState", 1);
             animator.SetInteger("Ani_Key_State", 1);
-            Destroy(keyObject);
+            keyObject.SetActive(false);
         }
     }
 }
