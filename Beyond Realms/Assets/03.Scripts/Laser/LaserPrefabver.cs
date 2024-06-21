@@ -6,18 +6,16 @@ public class LaserPrefabver : MonoBehaviour
 {
     public GameObject laserPrefab;         // 발사할 레이저 프리팹
     public Transform laserSpawnPoint;      // 레이저 발사 위치
-    public float laserSpeed = 20f;          // 레이저 발사 속도
-    public float maxLaserLength = 105f;     // 레이저의 최대 길이
+    public float laserSpeed = 20f;         // 레이저 발사 속도
+    public float maxLaserLength = 105f;    // 레이저의 최대 길이
 
     private GameObject currentLaser;
     private Vector3 originalScale;
-    private Vector3 targetScale;
     private bool isShooting = false;
 
     void Start()
     {
         originalScale = laserPrefab.transform.localScale;
-        targetScale = new Vector3(originalScale.x, originalScale.y, maxLaserLength);
         StartCoroutine(FireLaser());
     }
 
@@ -36,7 +34,20 @@ public class LaserPrefabver : MonoBehaviour
             yield return null;
         }
 
-        Destroy(currentLaser);
+        // 레이저 길이를 최대 길이로 유지
+        currentLaser.transform.localScale = new Vector3(originalScale.x, originalScale.y, maxLaserLength);
         isShooting = false;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Mirror"))
+        {
+            LaserPrefabver otherLaserScript = other.GetComponent<LaserPrefabver>();
+            if (otherLaserScript != null && !otherLaserScript.isShooting)
+            {
+                otherLaserScript.StartCoroutine(otherLaserScript.FireLaser());
+            }
+        }
     }
 }

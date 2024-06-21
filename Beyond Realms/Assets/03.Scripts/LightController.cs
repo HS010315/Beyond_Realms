@@ -61,6 +61,7 @@ public class LightController : MonoBehaviour
 
         light.intensity = 0;
         StartCoroutine(OnLightCoroutine(firstLights)); // 꺼지자 마자 켜질 첫번째 조명
+        isFirstClear = true;
     }
 
     private IEnumerator FadeOutLight(List<Light> lightsOut) // 여러개의 라이트를 끌 수 있는 함수
